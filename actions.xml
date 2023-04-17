@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="actions" type="digits">
+      <prompt>
+      What information do you want to check?
+      For weather information, press one.
+      For market information, press two.
+      For cereal knowledge, press three.
+      </prompt>
+      <filled>
+        <if cond="actions == '1'">
+          <prompt>Ok. I will provide you with weather information.</prompt>
+        <elseif cond="actions == '2'" />
+          <prompt>Ok. I will provide you with market information.</prompt>
+        <elseif cond="actions == '3'" />
+          <prompt>Ok. I will provide you with cereal knowledge.</prompt>
+        <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="actions.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

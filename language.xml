@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="language" type="digits">
+      <prompt>
+      May I ask what language do you speak?
+      For English service, press one.
+      For French service, press two.
+      </prompt>
+      <filled>
+        <if cond="language == '1'">
+          <prompt>Ok. The service is in English now.</prompt>
+          <goto next="actions.xml" />
+        <elseif cond="language == '2'" />
+          <prompt>Ok. The service is in French now.</prompt>
+          <goto next="actions.xml" />
+        <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="language.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form name="greeting">
+    <block>
+      <prompt>Hello! Welcome to the app!</prompt>
+      <goto next="language.xml" />
+    </block>
+  </form>
+</vxml>
