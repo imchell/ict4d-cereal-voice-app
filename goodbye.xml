@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="leaving" type="boolean">
+      <prompt>
+      Do you want another query?
+      </prompt>
+      <noinput>
+      Press one to confirm. Press two to leave the app.
+      </noinput>
+      <nomatch>
+      Your choice is not valid.
+      </nomatch>
+      <filled>
+        <if cond="leaving"> 
+        The app is being redirected to the start.
+        <goto next="actions.xml" />
+        <else >
+        Thanks for using. Goodbye!
+        </if> 
+      </filled>
+    </field>
+  </form>
+</vxml>
