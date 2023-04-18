@@ -2,10 +2,11 @@
 <vxml version="2.1">
 	<form>
 		<field name="market-main" type="digits">
-			<prompt>Welcome to the online market! Please choose the function you want.</prompt>
-			<prompt>If you want to get the price of cereals, press one.</prompt>
-			<prompt>If you want to know the popularity of cereals this year, press two.</prompt>
-			<prompt>If you want to sell your cereals, press three.</prompt>
+			<prompt>Welcome to the online market! Please choose the function you want.
+				If you want to get the price of cereals, press one.
+				If you want to know the popularity of cereals this year, press two.
+				If you want to sell your cereals, press three.
+			</prompt>
 			<filled>
 				<if cond="market-main == '1'">
 					<prompt>You have selected to get the price of a cereal. </prompt>
