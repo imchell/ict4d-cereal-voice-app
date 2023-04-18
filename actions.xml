@@ -13,7 +13,8 @@
           <prompt>Ok. I will provide you with weather information.</prompt>
         <elseif cond="actions == '2'" />
           <prompt>Ok. I will provide you with market information.</prompt>
-          <goto next= "market-main.xml"/>
+<!--           <goto next= "market-main.xml"/> -->
+          <goto next="goodbye.xml"/>
         <elseif cond="actions == '3'" />
           <prompt>Ok. I will provide you with cereal knowledge.</prompt>
         <else />
