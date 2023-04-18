@@ -15,7 +15,7 @@
         <if cond="leaving"> 
         The app is being redirected to the start.
         <goto next="actions.xml" />
-        <else >
+        <else/>
         Thanks for using. Goodbye!
         </if> 
       </filled>
