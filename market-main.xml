@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<form id="market-main">
+		<block>
+			<prompt>Welcome to the online market! Please choose the function you want.</prompt>
+			<menu>
+				<prompt>If you want to get the price of cereals, press one.</prompt>
+				<prompt>If you want to know the popularity of cereals this year, press two.</prompt>
+				<prompt>If you want to sell your cereals, press three.</prompt>
+				<choice dtmf="1">
+					<prompt>You have selected to get the price of a cereal. Please select the cereal type you are interested in by pressing the corresponding number.</prompt>
+					<menu>
+						<prompt>If you want to know the price of rice, press one. If you want to know the price of cotton, press two. If you want to know the price of sorghum, press three.</prompt>
+						<choice dtmf="1">
+							<prompt>The current price of cereals is 5 Euro per kilogram. Thank you for using our service.</prompt>
+						</choice>
+						<choice dtmf="2">
+							<prompt>The current price of cereals is 7 Euro per kilogram. Thank you for using our service.</prompt>
+						</choice>
+						<choice dtmf="3">
+							<prompt>The current price of cereals is 9 Euro per kilogram. Thank you for using our service.</prompt>
+						</choice>
+					</menu>
+				</choice>
+				<choice dtmf="2">
+					<prompt>You have selected option two. Please wait while we fetch the cereal popularity information for you.</prompt>
+					<goto next="#get-cereal-popularity"/>
+				</choice>
+				<choice dtmf="3">
+					<prompt>You have selected to sell your cereal. Please leave a message at the tone and report the type, quantity, and price of the cereal you wish to sell.</prompt>
+					<record name="sale_report" beep="true" maxtime="30s" finalsilence="500ms" dtmfterm="true" type="audio/x-wav"/>
+				</choice>
+			</menu>
+		</block>
+		<form id="get-cereal-popularity">
+			<block>
+				<prompt>The most popular cereals this year are wheat and maize. Thank you for using our service.</prompt>
+			</block>
+			<goto next="#market-main"/>
+		</form>
+	</form>
+</vxml>
