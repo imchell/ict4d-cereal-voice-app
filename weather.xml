@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="weather" type="digits">
+      <prompt>
+      Do you want to get information about weather? Please select which function do you want.
+      For weather forecast, press one.
+      Get some suggestion on plant, press two.
+      </prompt>
+      <filled>
+        <if cond="weather == '1'">
+          <prompt>You selected weather forecast.</prompt>
+          <goto next= "weather-forecast.xml"/>
+        <elseif cond="weather == '2'" />
+          <prompt>You selected suggestion.</prompt>
+          <goto next= "weather-suggestion.xml"/>
+        <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="weather.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>
