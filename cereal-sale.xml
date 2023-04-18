@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<form>
+		<field name="cereal-sale" type="digits">
+			<prompt>
+				Please leave a message at the tone and report the type, quantity, and price of the cereal you wish to sell.
+			</prompt>
+				
+			<record name="sale_report" beep="true" maxtime="30s" finalsilence="500ms" dtmfterm="true" type="audio/x-wav"/>
+			<goto next="goodbye.xml"/>
+		</field>
+	</form>
+</vxml>
