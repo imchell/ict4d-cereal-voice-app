@@ -7,15 +7,17 @@
 			<prompt>If you want to know the popularity of cereals this year, press two.</prompt>
 			<prompt>If you want to sell your cereals, press three.</prompt>
 			<filled>
-				<if cond=="market-main == '1'">
+				<if cond="market-main == '1'">
 					<prompt>You have selected to get the price of a cereal. </prompt>
 					<goto next="get-cereal-price.xml"/>
 				<elseif cond="market-main =='2'"/>
 					<prompt>You have selected to get the popularity of cereals this year.</prompt>
 					<goto next="get-cereal-popularity.xml"/>
-				<else/>
+				<elseif cond="market-main == '3'"/>
 					<prompt>You have selected to sell your cereal. </prompt>
 					<goto next="cereal-sale.xml"/>
+				<else/>
+					<prompt>Your choice is not valid.</prompt>
 				</if>
 			</filled>
 		</field>
