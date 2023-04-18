@@ -2,6 +2,7 @@
 <vxml version="2.1">
 	<form id = "market-main">
 		<field name="market-main" type="digits">
+			<block>
 			<prompt>Welcome to the online market! Please choose the function you want.
 				If you want to get the price of cereals, press one.
 				If you want to know the popularity of cereals this year, press two.
@@ -21,6 +22,7 @@
 					<prompt>Your choice is not valid.</prompt>
 				</if>
 			</filled>
+			</block>
 		</field>
 	</form>
 </vxml>
