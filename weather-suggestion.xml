@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="weather-suggestion" type="digits">
+      <prompt>
+      The best cereals for plant in such weather is rice. Thank you for listening.
+      </prompt>
+      <goto next= "goodbye.xml"/>
+    </field>
+  </form>
+</vxml>
