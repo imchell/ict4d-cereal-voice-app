@@ -9,15 +9,17 @@
 				If you want to know the price of sorghum, press three.
 			</prompt>
 			<filled>
-				<if cond=="get-cereal-price == '1'">
+				<if cond="get-cereal-price == '1'">
 					<prompt>The current price of rice is 5 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
 				<elseif cond="get-cereal-price =='2'"/>
 					<prompt>The current price of cotton is 7 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
-				<else/>
+				<elseif cond="get-cereal-price == '3'"/>
 					<prompt>The current price of sorghum is 9 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
+				<else/>
+					<prompt>Your choice is not valid.</prompt>
 				</if>
 			</filled>
 		</field>
