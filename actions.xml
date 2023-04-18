@@ -11,6 +11,7 @@
       <filled>
         <if cond="actions == '1'">
           <prompt>Ok. I will provide you with weather information.</prompt>
+          <goto next= "weather.xml"/>
         <elseif cond="actions == '2'" />
           <prompt>Ok. I will provide you with market information.</prompt>
           <goto next= "market-main.xml"/>
