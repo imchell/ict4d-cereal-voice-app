@@ -17,7 +17,7 @@
 					<goto next="goodbye.xml"/>
 				<else/>
 					<prompt>The current price of sorghum is 9 Euro per kilogram.</prompt>
-					<goto next="goodbyexml"/>
+					<goto next="goodbye.xml"/>
 				</if>
 			</filled>
 		</field>
