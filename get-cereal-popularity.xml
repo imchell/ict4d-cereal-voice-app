@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<form>
+		<field name="get-cereal-popularity" type="digits">
+			<prompt>
+				The most popular cereals this year are wheat and maize. 
+				Thank you for using our service.
+			</prompt>
+			<goto next="goodbye.xml"/>
+		</field>
+	</form>
+</vxml>
