@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
   <form>
-    <field name="weather-forecast" type="digits">
+    <field name="forecast" type="digits">
       <prompt>
       It is a coldy day today. Right now, the temperature is 10º centigrade.
       The highest temperature in the day is 15º centigrade, and the lowest temperature in the day is 7º centigrade.
       If you want to know the weather for next 6 days. Please press one.
       </prompt>
       <filled>
-        <if cond="weather-forecast == '1'">
+        <if cond="forecast == '1'">
           <prompt>Tomorrow is a coldy day. The highest temperature in the day is 15º centigrade, 
           and the lowest temperature in the day is 7º centigrade.
           The day after Tomorrow is a sunny day. The highest temperature in the day is 19º centigrade, 
