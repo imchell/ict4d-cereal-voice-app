@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
 	<form>
-		<field name="get-cereal-price" type="digits">
+		<field name="getcerealprice" type="digits">
 			<prompt>
 				Please select the cereal type you are interested in by pressing the corresponding number.
 				If you want to know the price of rice, press one. 
@@ -9,13 +9,13 @@
 				If you want to know the price of sorghum, press three.
 			</prompt>
 			<filled>
-				<if cond="get-cereal-price == '1'">
+				<if cond="getcerealprice == '1'">
 					<prompt>The current price of rice is 5 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
-				<elseif cond="get-cereal-price =='2'"/>
+				<elseif cond="getcerealprice =='2'"/>
 					<prompt>The current price of cotton is 7 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
-				<elseif cond="get-cereal-price == '3'"/>
+				<elseif cond="getcerealprice == '3'"/>
 					<prompt>The current price of sorghum is 9 Euro per kilogram.</prompt>
 					<goto next="goodbye.xml"/>
 				<else/>
