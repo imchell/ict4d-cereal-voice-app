@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<vxml version="2.1"> 
+  <form id="form"> 
+    <block>
+      Hello I'm reading data.
+      <data name="api" srcexpr="'https://64467a770431e885f0132ce5.mockapi.io/api/v1/weather/1'" method="get" enctype="application/json-inin" />
+      The content is
+      <value expr="api"/> 
+      The temperature is
+      <value expr="JSON.parse(api).temp"/>  
+    </block> 
+  </form> 
+</vxml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form id="weather">
+    <field name="zip" type="digits">
+      <prompt>Please enter your zip code:</prompt>
+    </field>
+    <filled>
+      <script>
+        var url = "https://64467a770431e885f0132ce5.mockapi.io/api/v1/weather/1";
+        <!-- fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            var temperature = data.current.temp;
+            var message = "The current temperature is " + temperature + " degrees";
+            document.getElementById("result").innerHTML = message;
+          }); -->
+      </script>
+      <submit next="#result" />
+    </filled>
+  </form>
+  <block id="result">
+    <prompt id="result" />
+  </block>
+</vxml>
