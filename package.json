@@ -1,0 +1,15 @@
+{
+  "name": "ict4d-voice-app-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/imchell/ict4d-cereal-voice-app.git",
+  "author": "Chell <im.chell@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  }
+}
