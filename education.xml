@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="education" type="digits">
+      <prompt>
+      Now, you can choose which plants you want to know further.
+      For rice information, press one.
+      For cotton information, press two.
+      For sorghum knowledge, press three.
+      </prompt>
+      <filled>
+        <if cond="actions == '1'">
+          <goto next="rice.xml" />
+        <elseif cond="actions == '2'" />
+          <goto next="cotton.xml" />
+        <elseif cond="actions == '3'" />
+          <goto next="sorghum.xml" />
+        <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="education.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>
