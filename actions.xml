@@ -18,6 +18,7 @@
 <!--           <goto next="goodbye.xml"/> -->
         <elseif cond="actions == '3'" />
           <prompt>Ok. I will provide you with cereal knowledge.</prompt>
+          <goto next= "education.xml"/>
         <else />
           <prompt>Your choice is not valid.</prompt>
           <goto next="actions.xml" />
