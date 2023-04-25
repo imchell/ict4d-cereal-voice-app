@@ -38,8 +38,20 @@ app.get("/weather-forecast.xml", (req, res) => {
       let page = render(
         "weather-forecast",
         {
-          high: highAndLow[0][0],
-          low: highAndLow[0][1],
+          high0: highAndLow[0][0],
+          low0: highAndLow[0][1],
+          high1: highAndLow[1][0],
+          low1: highAndLow[1][1],
+          high2: highAndLow[2][0],
+          low2: highAndLow[2][1],
+          high3: highAndLow[3][0],
+          low3: highAndLow[3][1],
+          high4: highAndLow[4][0],
+          low4: highAndLow[4][1],
+          high5: highAndLow[5][0],
+          low5: highAndLow[5][1],
+          high6: highAndLow[6][0],
+          low6: highAndLow[6][1],
         },
         res
       );

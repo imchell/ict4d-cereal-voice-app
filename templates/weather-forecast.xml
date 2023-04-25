@@ -4,24 +4,27 @@
     <field name="forecast" type="digits">
       <prompt>
       <!-- It is a coldy day today. Right now, the temperature is 10º centigrade. -->
-      The highest temperature in the day is {high} centigrade, and the lowest temperature in the day is {low} centigrade.
-      If you want to know the weather for next 6 days. Please press one.
+      I'm searching for Bamako weather.
+      The highest temperature in the day is {high0} centigrade, and the lowest temperature in the day is {low0} centigrade.
+      If you want to know the weather for next 6 days. Please press one. If you want to end the service. Please press two.
       </prompt>
       <filled>
         <if cond="forecast == '1'">
-          <prompt>Tomorrow is a coldy day. The highest temperature in the day is 15º centigrade, 
-          and the lowest temperature in the day is 7º centigrade.
-          The day after Tomorrow is a sunny day. The highest temperature in the day is 19º centigrade, 
-          and the lowest temperature in the day is 10º centigrade. 
-          It will be sunny three days from today. The highest temperature in the day is 18º centigrade, 
-          and the lowest temperature in the day is 10º centigrade.
-          It will be sunny four days from today. The highest temperature in the day is 18º centigrade, 
-          and the lowest temperature in the day is 10º centigrade.
-          It will be sunny five days from today. The highest temperature in the day is 18º centigrade, 
-          and the lowest temperature in the day is 10º centigrade.
-          It will be sunny six days from today. The highest temperature in the day is 18º centigrade, 
-          and the lowest temperature in the day is 10º centigrade.
+          <prompt>Tomorrow is a coldy day. The highest temperature in the day is {high1} centigrade, 
+          and the lowest temperature in the day is {low1} centigrade.
+          The day after Tomorrow is a sunny day. The highest temperature in the day is {high2} centigrade, 
+          and the lowest temperature in the day is {low2} centigrade. 
+          It will be sunny three days from today. The highest temperature in the day is {high3} centigrade, 
+          and the lowest temperature in the day is {low3} centigrade.
+          It will be sunny four days from today. The highest temperature in the day is {high4} centigrade, 
+          and the lowest temperature in the day is {low4} centigrade.
+          It will be sunny five days from today. The highest temperature in the day is {high5} centigrade, 
+          and the lowest temperature in the day is {low5} centigrade.
+          It will be sunny six days from today. The highest temperature in the day is {high6} centigrade, 
+          and the lowest temperature in the day is {low6} centigrade.
           </prompt>
+          <goto next= "goodbye.xml"/>
+        <elseif cond="forecast == '2'" />
           <goto next= "goodbye.xml"/>
         <else />
           <prompt>Your choice is not valid.</prompt>
