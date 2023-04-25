@@ -3,8 +3,8 @@
   <form>
     <field name="forecast" type="digits">
       <prompt>
-      It is a coldy day today. Right now, the temperature is 10º centigrade.
-      The highest temperature in the day is 15º centigrade, and the lowest temperature in the day is 7º centigrade.
+      <!-- It is a coldy day today. Right now, the temperature is 10º centigrade. -->
+      The highest temperature in the day is {high} centigrade, and the lowest temperature in the day is {low} centigrade.
       If you want to know the weather for next 6 days. Please press one.
       </prompt>
       <filled>
