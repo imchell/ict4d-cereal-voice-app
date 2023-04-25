@@ -16,7 +16,7 @@ app.get("/weather", (req, res) => {
       "https://api.open-meteo.com/v1/forecast?latitude=12.65&longitude=-8.00&hourly=temperature_2m"
     )
     .then((response) => {
-      const temperature = response.data.temperature_2m[0];
+      const temperature = response.data.hourly.temperature_2m[0];
       res.send(`temperature: ${temperature}`);
     })
     .catch((error) => {
