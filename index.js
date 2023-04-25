@@ -5,14 +5,9 @@ const axios = require("axios");
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get(["/", "/:name"], (req, res) => {
+app.get(["/"], (req, res) => {
   greeting = "<h1>Hello From Node on Fly!</h1>";
-  name = req.params["name"];
-  if (name) {
-    res.send(greeting + "</br>and hello to " + name);
-  } else {
-    res.send(greeting);
-  }
+  res.send(greeting);
 });
 
 app.get("/weather", (req, res) => {
