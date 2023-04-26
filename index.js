@@ -8,7 +8,7 @@ const dbInit = require("./db.js");
 const app = express();
 const port = process.env.PORT || 3000;
 
-dbInit();
+const client = dbInit();
 
 app.get(["/"], (req, res) => {
   greeting = "<h1>Hello From Group 6!</h1>";
