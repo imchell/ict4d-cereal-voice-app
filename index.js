@@ -3,9 +3,12 @@ const render = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
+const dbInit = require("./db.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+dbInit();
 
 app.get(["/"], (req, res) => {
   greeting = "<h1>Hello From Group 6!</h1>";
@@ -14,6 +17,10 @@ app.get(["/"], (req, res) => {
 
 app.get("/greeting.xml", (req, res) => {
   render("greeting", {}, res);
+});
+
+app.get("/education.xml", (req, res) => {
+  render("education", {}, res);
 });
 
 app.get("/weather-forecast.xml", (req, res) => {
