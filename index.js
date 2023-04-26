@@ -3,7 +3,7 @@ const render = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
-const dbInit = require("./db.js");
+const { dbInit, getKnowledgeOf } = require("./db.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -21,6 +21,10 @@ app.get("/greeting.xml", (req, res) => {
 
 app.get("/education.xml", (req, res) => {
   render("education", {}, res);
+});
+
+app.get("/rice.xml", (req, res) => {
+  getKnowledgeOf(client, "Rice", res);
 });
 
 app.get("/weather-forecast.xml", (req, res) => {

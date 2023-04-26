@@ -2,83 +2,9 @@
 <vxml version="2.1">
   <form>
     <field name="choose" type="digits">
-      <prompt>
-        Now you chan choose what you want to know further about rice.
-        For general information about rice, press one.
-	For Paddy and Soil Preparation, press two.
-        For Rice planting, sowing requirements, press three.
-	For Nutritional Management of Rice and Rice Fertilization, press four.
-	For Rice Pests and Diseases, press five.
-	For Rice Harvesting, Yield per Hectare and Storage, press six.
-	If you want go back to action select, press zero.
-      </prompt>
-      <filled>
-        <if cond="choose == '1'">
-          <prompt>Rice is grown in 3 main ways:
-	The first is grown in lowlands or rice fields. 
-	Rice is grown on submerged land, either rain-fed or irrigated. 
-	Water depths vary from 2 to 20 inches.
-	The second is floating water rice and deep water rice. 
-	Rice is grown on highly flooded land. 
-	Water depths can exceed 20 inches to 200 inches (5 meters). 
-	Only certain varieties of rice can be grown this way.
-	The third is dryland rice cultivation, which is rarely done. 
-	When rice is grown on land without water, 
-	the crop is highly dependent on rain. 
-	Natural rainfall is the only way to irrigate these fields. 
-	In this case, we have to take into account that there should be periods of frequent rains of 3 to 4 months. 
-	This is absolutely necessary, and only then will the plants develop properly.
-	In general, water protects rice plants from extreme cold and heat. 
-	Water also prevents weeds from growing.
-
-</prompt>
-          <goto next="rice.xml" />
-        <elseif cond="choose == '2'" />
-          <prompt>Rice is a resilient plant that can grow in almost all types of soil. 
-	It can grow in wet or dry land as long as it is well watered.
-	It can grow in wet or dry land as long as it is well watered. 			
-	However, since we expect good yields from the fields, the soil must be prepared.
-	First of all, the paddy field must be free of weeds and useless substances.
-	When grown in lowlands and drylands, less water is required. 
-	We can consider the following steps to prepare a rice field.
-	Step 1: Build the embankment. Dykes help fields retain moisture from rainfall. 
-	We can build 19 x 12 inch dikes around the field. 
-	Each channel is usually 1.1 to 1.9 inches high and ensures the field is supplied with moisture during the rainy season.
-	Step Two: Till after the soil has been well watered.
-	Step 3: Level the field. 
-	In dry land preparation, we store very little water in the fields and use tools such as planks to level the land.
-	Step 5: Weed Control. 
-	A common way to prevent weeds from growing is to let them grow for at least two weeks.
-	After weeds emerge, apply herbicides.</prompt>
-          <goto next="rice.xml" />
-	<elseif cond="choose == '3'" />
-          <prompt>Seeds germinate and hatch for 1-2 days before direct sowing. 
-	We sow the seeds 6 to 10 inches apart. 
-	We then let water fill our fields immediately or about 8 to 12 days after direct seeding is complete.
-	Next step is transplant.
-	Sow seeds in rows 2 to 4 inches apart. 
-	Once we have finished seeding the beds, 
-	fill the beds with water to a maximum depth of 2 inches. 
-	The rice plants are kept in the nursery for 15 to 40 days. 
-	Rice seedlings are usually ready to transplant when they are 8 to 12 inches tall. 
-	We transplanted rice seedlings linearly into the field in an 8" by 8" scheme, 
-	that is, 8 inches between plants in rows and 8 inches between each row).
-</prompt>
-          <goto next="rice.xml" />
-	<elseif cond="choose == '4'" />
-          <prompt>Ok. The service is in French now.</prompt>
-          <goto next="rice.xml" />
-	<elseif cond="choose == '5'" />
-          <prompt>Ok. The service is in French now.</prompt>
-          <goto next="rice.xml" />
-	<elseif cond="choose == '0'" />
-          <prompt>Ok. Now you can choose your action again.</prompt>
-          <goto next="rice.xml" />
-        <else />
-          <prompt>Your choice is not valid.</prompt>
-          <goto next="rice.xml" />
-        </if>
-      </filled>
+      <block>
+				Your Query is {Crop}.
+			</block>
     </field>
   </form>
 </vxml>
