@@ -1,6 +1,5 @@
 const { Client } = require("pg");
 const fs = require("fs");
-const { Readable } = require("stream");
 
 function dbInit() {
   const client = new Client({ connectionString: process.env.DATABASE_URL });
@@ -34,49 +33,32 @@ function dbInit() {
 }
 
 function cerealKnowledgeBaseInit(client) {
-  const initQuery = `
-  CREATE TABLE cerealKnowledgeBase (
+  const initQuery = `CREATE TABLE IF NOT EXISTS cerealKnowledgeBase (
     Crop TEXT,
     Min_Planting_Temperature INTEGER,
     Max_Planting_Temperature INTEGER,
     Planting_Start_Month INTEGER,
     Planting_End_Month INTEGER,
     Description TEXT
-  );
-`;
+  );`;
+  const initInsertion = `INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
+    SELECT 'Rice', '20', '35', '6', '9', 'Rice is one of the main staple crops in Mali, typically planted during the rainy season. It requires ample water supply and is primarily grown in the Niger River Valley and inland rice cultivation areas.'
+    WHERE NOT EXISTS (
+      SELECT Crop FROM cerealKnowledgeBase WHERE Crop = 'Rice'
+    );`;
   client.query(initQuery, (err, res) => {
     if (err) {
       console.error(err);
       client.end();
       return;
     }
-
-    console.log("Table created successfully");
-
-    // Import data from CSV file
-    const csvFilePath = "./data/cereal.csv";
-    const csvData = fs.readFileSync(csvFilePath, "utf8");
-
-    const importQuery = `
-    COPY cerealKnowledgeBase (Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description) FROM STDIN WITH (FORMAT CSV, HEADER true)
-  `;
-
-    const stream = client.query(copyFrom(importQuery));
-    stream.on("error", (err) => {
-      console.error(err);
-      client.end();
-      return;
+    client.query(initInsertion, (err, res) => {
+      if (err) {
+        console.error(err);
+        client.end();
+        return;
+      }
     });
-
-    stream.on("end", () => {
-      console.log("Data imported successfully");
-      client.end();
-    });
-
-    const csvStream = new Readable();
-    csvStream.push(csvData);
-    csvStream.push(null);
-    csvStream.pipe(stream);
   });
 }
 
