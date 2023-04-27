@@ -5,7 +5,6 @@
       <prompt>
       Welcome to the online market! Please choose the function you want.
       If you want to get the price of cereals, press one.
-      <!-- If you want to know the popularity of cereals this year, press two. -->
       If you want to sell your cereals, press two.
       If you want to exit, press three.
       </prompt>
