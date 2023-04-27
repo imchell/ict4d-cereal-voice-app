@@ -1,8 +1,10 @@
 const { Client } = require("pg");
 const fs = require("fs");
 const render = require("./templateEngine.js");
+const { log } = require("console");
 
 function dbInit() {
+  log("dbInit start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
   client.connect((err) => {
@@ -21,6 +23,7 @@ function dbInit() {
               if (err) {
                 console.error("disconnection error", err.stack);
               }
+              log("dbInit done");
             });
           }
         }
@@ -32,6 +35,8 @@ function dbInit() {
 }
 
 function _cerealKnowledgeBaseInit() {
+  log("_cerealKnowledgeBaseInit start");
+
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
   const initQuery = `DROP TABLE IF EXISTS cerealKnowledgeBase;
@@ -49,7 +54,7 @@ function _cerealKnowledgeBaseInit() {
       SELECT Crop FROM cerealKnowledgeBase WHERE Crop = 'Rice'
     );
     INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
-    SELECT 'Cotton', '15', '34', '5', '9', 'Cotton is one of the main cash crops in Mali, contributing significantly to the country's export revenue. Cotton cultivation is mainly concentrated in the southern regions, such as Sikasso, Kayes, and Koulikoro.'
+    SELECT 'Cotton', '15', '34', '5', '9', 'Cotton is one of the main cash crops in Mali, contributing significantly to the countrys export revenue. Cotton cultivation is mainly concentrated in the southern regions, such as Sikasso, Kayes, and Koulikoro.'
     WHERE NOT EXISTS (
       SELECT Crop FROM cerealKnowledgeBase WHERE Crop = 'Cotton'
     );
@@ -76,6 +81,12 @@ function _cerealKnowledgeBaseInit() {
             client.end();
             return;
           }
+          client.end((err) => {
+            if (err) {
+              console.error("disconnection error", err.stack);
+            }
+            log("_cerealKnowledgeBaseInit done");
+          });
         });
       });
     }
@@ -83,6 +94,7 @@ function _cerealKnowledgeBaseInit() {
 }
 
 function getKnowledgeOf(crop, res) {
+  log("getKnowledgeOf start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   // "Rice" or "Cotton" or "Sorghum"
 
@@ -113,6 +125,12 @@ function getKnowledgeOf(crop, res) {
             Description: Description,
           };
           render("education", replacement, res);
+          client.end((err) => {
+            if (err) {
+              console.error("disconnection error", err.stack);
+            }
+            log("getKnowledgeOf done");
+          });
         }
       );
     }
