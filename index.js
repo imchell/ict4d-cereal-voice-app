@@ -19,6 +19,10 @@ app.get("/greeting.xml", (req, res) => {
   render("greeting", {}, res);
 });
 
+app.get("/cereal-sale.xml", (req, res) => {
+  render("cereal-sale", {}, res);
+});
+
 app.get("/education.xml", (req, res) => {
   render("education", {}, res);
 });
