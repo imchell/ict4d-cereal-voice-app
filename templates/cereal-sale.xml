@@ -10,7 +10,9 @@
 		</field>
 		<block>
 			<var name="endpoint" expr="'market/' + cerealsale"/>
-    	<goto nextexpr="endpoint"/>
+    	<goto next="#redirect"/>
   	</block>
 	</form>
+
+	<submit next="" id="redirect" method="get" namelist="endpoint"/>
 </vxml>
