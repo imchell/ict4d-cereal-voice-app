@@ -121,7 +121,7 @@ function getLatestBids(res) {
         let bids = "The latest bids are as follows.";
         for (let i = 0; i < result.rows.length; i++) {
           let info = result.rows[i];
-          bids = `${bids}. ${info.quantity} ${info.type}s at the price of ${info.price}.`;
+          bids = `${bids} ${info.quantity} ${info.crop}s at the price of ${info.price}.`;
         }
         log("bids:");
         log(bids);
