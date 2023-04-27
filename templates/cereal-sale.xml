@@ -59,7 +59,6 @@
 				<assign name="quantity" expr="cerealquantity" />
 				<prompt>The price of <value expr="type" /> is <value expr="price" /> and the quantity is <value expr="quantity" />. Please Wait.</prompt>.
 				<goto expr="'market/' + type + '/' + price + '/' + quantity"/>
-				<prompt>We have updated the market. Thank you!</prompt>
 			</filled>
 		</field>
 	</form>
