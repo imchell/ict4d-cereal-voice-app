@@ -12,7 +12,7 @@
           <prompt>Ok. The service is in English now.</prompt>
           <goto next="actions.xml" />
         <elseif cond="language == '2'" />
-          <prompt>Ok. The service is in French now.</prompt>
+          <prompt xml:lang="fr-fr">D'accord. Le service est maintenant en français.</prompt>
           <goto next="actions.xml" />
         <else />
           <prompt>Your choice is not valid.</prompt>
