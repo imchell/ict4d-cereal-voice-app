@@ -23,6 +23,11 @@ app.get("/cereal-sale.xml", (req, res) => {
   render("cereal-sale", {}, res);
 });
 
+app.get("/market/:quantity", (req, res) => {
+  const quantity = req.params.quantity;
+  log(quantity);
+});
+
 app.get("/education.xml", (req, res) => {
   render("education", {}, res);
 });

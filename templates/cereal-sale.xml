@@ -9,7 +9,8 @@
 			<goto next="goodbye.xml"/> -->
 		</field>
 		<block>
-			<prompt>The sum of the numbers you entered is <value expr="cerealsale"/>.</prompt>
+			<var name="endpoint" expr="'market/' + cerealsale"/>
+    	<goto nextexpr="endpoint"/>
   	</block>
 	</form>
 </vxml>
