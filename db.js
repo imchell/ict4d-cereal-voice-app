@@ -76,7 +76,7 @@ function _marketBaseInit() {
   });
 }
 
-function updateMarket(type, price, quantity) {
+function updateMarket(type, price, quantity, res) {
   log("updateMarket start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   const intertionQuery = `INSERT INTO marketBase(Crop, Price, Quantity)
@@ -92,6 +92,7 @@ function updateMarket(type, price, quantity) {
           client.end();
           return;
         }
+        render("market-main", {}, res);
         client.end((err) => {
           if (err) {
             console.error("disconnection error", err.stack);

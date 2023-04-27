@@ -23,11 +23,15 @@ app.get("/cereal-sale.xml", (req, res) => {
   render("cereal-sale", {}, res);
 });
 
+app.get("/market-main.xml", (req, res) => {
+  render("market-main", {}, res);
+});
+
 app.get("/market/:type/:price/:quantity", (req, res) => {
   const type = req.params.type;
   const price = req.params.price;
   const quantity = req.params.quantity;
-  updateMarket(type, price, quantity);
+  updateMarket(type, price, quantity, res);
   log(
     "Market Info Added: " +
       type +
