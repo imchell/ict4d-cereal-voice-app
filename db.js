@@ -40,6 +40,7 @@ function _cerealKnowledgeBaseInit() {
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
   const initQuery = `
+  DROP TABLE cerealKnowledgeBase;
   CREATE TABLE IF NOT EXISTS cerealKnowledgeBase (
     Crop TEXT,
     Min_Planting_Temperature INTEGER,
@@ -49,11 +50,11 @@ function _cerealKnowledgeBaseInit() {
     Description TEXT
   );`;
   const initInsertion = `INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
-    SELECT 'Rice', '20', '35', '6', '9', 'Rice is one of the main staple crops in Mali, typically planted during the rainy season. It requires ample water supply and is primarily grown in the Niger River Valley and inland rice cultivation areas.';
-    INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
-    SELECT 'Cotton', '15', '34', '5', '9', 'Cotton is one of the main cash crops in Mali, contributing significantly to the countrys export revenue. Cotton cultivation is mainly concentrated in the southern regions, such as Sikasso, Kayes, and Koulikoro.';
-    INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
-    SELECT 'Sorghum', '21', '32', '5', '9', 'Sorghum is one of the main staple crops in Mali, characterized by its drought tolerance and wide adaptability. In Mali, sorghum is mainly used for human consumption and animal feed, and is extensively cultivated throughout the country.';
+    VALUES( 'Rice', '20', '35', '6', '9', 'Rice is one of the main staple crops in Mali, typically planted during the rainy season. It requires ample water supply and is primarily grown in the Niger River Valley and inland rice cultivation areas.');
+      INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
+    VALUES( 'Cotton', '15', '34', '5', '9', 'Cotton is one of the main cash crops in Mali, contributing significantly to the countrys export revenue. Cotton cultivation is mainly concentrated in the southern regions, such as Sikasso, Kayes, and Koulikoro.');
+      INSERT INTO cerealKnowledgeBase(Crop, Min_Planting_Temperature, Max_Planting_Temperature, Planting_Start_Month, Planting_End_Month, Description)
+    VALUES( 'Sorghum', '21', '32', '5', '9', 'Sorghum is one of the main staple crops in Mali, characterized by its drought tolerance and wide adaptability. In Mali, sorghum is mainly used for human consumption and animal feed, and is extensively cultivated throughout the country.');
     `;
 
   client.connect((err) => {
@@ -87,7 +88,7 @@ function getKnowledgeOf(crop, res) {
       console.error("connection error", err.stack);
     } else {
       client.query(
-        `SELECT * FROM cerealKnowledgeBase WHERE Crop = "${crop}"`,
+        `SELECT * FROM cerealKnowledgeBase WHERE Crop = '${crop}'`,
         function (err, result) {
           if (err) {
             console.error(err);
