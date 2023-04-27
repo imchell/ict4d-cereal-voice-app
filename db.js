@@ -104,6 +104,42 @@ function updateMarket(type, price, quantity, res) {
   });
 }
 
+function getLatestBids(res) {
+  log("getLatestBids start");
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
+  client.connect((err) => {
+    if (err) {
+      console.error("connection error", err.stack);
+    } else {
+      client.query(`SELECT * FROM marketBase`, function (err, result) {
+        if (err) {
+          console.error(err);
+          client.end();
+          return;
+        }
+        let bids = "The latest bids are as follows.";
+        for (let i = 0; i < result.rows.length; i++) {
+          let info = result.rows[i];
+          bids = `${bids}. ${info.quantity} ${info.type}s at the price of ${info.price}.`;
+        }
+        log("bids:");
+        log(bids);
+        let replacement = {
+          bids: bids,
+        };
+        render("get-cereal-price", replacement, res);
+        client.end((err) => {
+          if (err) {
+            console.error("disconnection error", err.stack);
+          }
+          log("getLatestBids done");
+        });
+      });
+    }
+  });
+}
+
 function _cerealKnowledgeBaseInit() {
   log("_cerealKnowledgeBaseInit start");
 
@@ -193,4 +229,5 @@ module.exports = {
   dbInit: dbInit,
   getKnowledgeOfCrop: getKnowledgeOfCrop,
   updateMarket: updateMarket,
+  getLatestBids: getLatestBids,
 };

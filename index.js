@@ -3,7 +3,12 @@ const render = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
-const { dbInit, getKnowledgeOfCrop, updateMarket } = require("./db.js");
+const {
+  dbInit,
+  getKnowledgeOfCrop,
+  updateMarket,
+  getLatestBids,
+} = require("./db.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,8 +28,16 @@ app.get("/cereal-sale.xml", (req, res) => {
   render("cereal-sale", {}, res);
 });
 
+app.get("/get-cereal-price.xml", (req, res) => {
+  getLatestBids(res);
+});
+
 app.get("/market-main.xml", (req, res) => {
   render("market-main", {}, res);
+});
+
+app.get("/good-bye.xml", (req, res) => {
+  render("good-bye", {}, res);
 });
 
 app.get("/market/:type/:price/:quantity", (req, res) => {
