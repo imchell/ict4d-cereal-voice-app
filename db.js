@@ -40,7 +40,6 @@ function _cerealKnowledgeBaseInit() {
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
   const initQuery = `
-  DROP TABLE cerealKnowledgeBase;
   CREATE TABLE IF NOT EXISTS cerealKnowledgeBase (
     Crop TEXT,
     Min_Planting_Temperature INTEGER,
@@ -96,6 +95,9 @@ function getKnowledgeOf(crop, res) {
             return;
           }
           let info = result.rows[0];
+          log(result);
+          log("info:");
+          log(info);
           let Crop = info.Crop;
           let Min_Planting_Temperature = info.Min_Planting_Temperature;
           let Max_Planting_Temperature = info.Max_Planting_Temperature;
