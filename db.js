@@ -28,12 +28,12 @@ function dbInit() {
     }
   });
 
-  _cerealKnowledgeBaseInit(client);
-
-  return client;
+  _cerealKnowledgeBaseInit();
 }
 
-function _cerealKnowledgeBaseInit(client) {
+function _cerealKnowledgeBaseInit() {
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
   const initQuery = `DROP TABLE IF EXISTS cerealKnowledgeBase;
   CREATE TABLE IF NOT EXISTS cerealKnowledgeBase (
     Crop TEXT,
@@ -59,50 +59,64 @@ function _cerealKnowledgeBaseInit(client) {
       SELECT Crop FROM cerealKnowledgeBase WHERE Crop = 'Sorghum'
     );
     `;
-  client.query(initQuery, (err, res) => {
+
+  client.connect((err) => {
     if (err) {
-      console.error(err);
-      client.end();
-      return;
+      console.error("connection error", err.stack);
+    } else {
+      client.query(initQuery, (err, res) => {
+        if (err) {
+          console.error(err);
+          client.end();
+          return;
+        }
+        client.query(initInsertion, (err, res) => {
+          if (err) {
+            console.error(err);
+            client.end();
+            return;
+          }
+        });
+      });
     }
-    client.query(initInsertion, (err, res) => {
-      if (err) {
-        console.error(err);
-        client.end();
-        return;
-      }
-    });
   });
 }
 
 function getKnowledgeOf(crop, res) {
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   // "Rice" or "Cotton" or "Sorghum"
-  client.query(
-    `SELECT * FROM cerealKnowledgeBase WHERE Crop = ${crop}`,
-    function (err, result) {
-      done(); // release client back to pool
-      if (err) {
-        return console.error("error running query", err);
-      }
-      let info = result.rows[0];
-      let Crop = info.Crop;
-      let Min_Planting_Temperature = info.Min_Planting_Temperature;
-      let Max_Planting_Temperature = info.Max_Planting_Temperature;
-      let Planting_Start_Month = info.Planting_Start_Month;
-      let Planting_End_Month = info.Planting_End_Month;
-      let Description = info.Description;
-      let replacement = {
-        Crop: Crop,
-        Min_Planting_Temperature: Min_Planting_Temperature,
-        Max_Planting_Temperature: Max_Planting_Temperature,
-        Planting_Start_Month: Planting_Start_Month,
-        Planting_End_Month: Planting_End_Month,
-        Description: Description,
-      };
-      render("education", replacement, res);
+
+  client.connect((err) => {
+    if (err) {
+      console.error("connection error", err.stack);
+    } else {
+      client.query(
+        `SELECT * FROM cerealKnowledgeBase WHERE Crop = ${crop}`,
+        function (err, result) {
+          done(); // release client back to pool
+          if (err) {
+            return console.error("error running query", err);
+          }
+          let info = result.rows[0];
+          let Crop = info.Crop;
+          let Min_Planting_Temperature = info.Min_Planting_Temperature;
+          let Max_Planting_Temperature = info.Max_Planting_Temperature;
+          let Planting_Start_Month = info.Planting_Start_Month;
+          let Planting_End_Month = info.Planting_End_Month;
+          let Description = info.Description;
+          let replacement = {
+            Crop: Crop,
+            Min_Planting_Temperature: Min_Planting_Temperature,
+            Max_Planting_Temperature: Max_Planting_Temperature,
+            Planting_Start_Month: Planting_Start_Month,
+            Planting_End_Month: Planting_End_Month,
+            Description: Description,
+          };
+          render("education", replacement, res);
+        }
+      );
     }
-  );
+  });
 }
 
 module.exports = { dbInit: dbInit, getKnowledgeOf: getKnowledgeOf };
