@@ -7,17 +7,17 @@
       If you want to get the price of cereals, press one.
       <!-- If you want to know the popularity of cereals this year, press two. -->
       If you want to sell your cereals, press two.
+      If you want to exit, press three.
       </prompt>
       <filled>
         <if cond="market == '1'">
           <prompt>You have selected to get the price of a cereal.</prompt>
 		      <goto next="get-cereal-price.xml" />
-        <!-- <elseif cond="market == '2'" />
-          <prompt>You have selected to get the popularity of cereals this year.</prompt>
-          <goto next= "get-cereal-popularity.xml"/> -->
         <elseif cond="market == '2'" />
           <prompt>You have selected to sell your cereal.</prompt>
 		      <goto next= "cereal-sale.xml"/>
+        <elseif cond="market == '3'" />
+		      <goto next= "goodbye.xml"/>
         <else />
           <prompt>Your choice is not valid.</prompt>
           <goto next="market-main.xml" />

@@ -24,6 +24,23 @@ app.get("/greeting.xml", (req, res) => {
   render("greeting", {}, res);
 });
 
+app.get("/language.xml", (req, res) => {
+  render("language", {}, res);
+});
+
+app.get("/actions.xml", (req, res) => {
+  render("actions", {}, res);
+});
+
+app.get("/weather.xml", (req, res) => {
+  render("weather", {}, res);
+});
+
+// TODO: add suggestion with analytics
+app.get("/weather-suggestion.xml", (req, res) => {
+  render("weather-suggestion", {}, res);
+});
+
 app.get("/cereal-sale.xml", (req, res) => {
   render("cereal-sale", {}, res);
 });
@@ -36,8 +53,8 @@ app.get("/market-main.xml", (req, res) => {
   render("market-main", {}, res);
 });
 
-app.get("/good-bye.xml", (req, res) => {
-  render("good-bye", {}, res);
+app.get("/goodbye.xml", (req, res) => {
+  render("goodbye", {}, res);
 });
 
 app.get("/market/:type/:price/:quantity", (req, res) => {

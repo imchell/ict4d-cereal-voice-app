@@ -5,7 +5,7 @@
 			<prompt>
 				{bids}
 			</prompt>
-			<goto next="goodbye.xml"/>
+			<goto next="market-main.xml"/>
 		</field>
 	</form>
 </vxml>

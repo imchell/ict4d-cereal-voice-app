@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
   <form>
-    <field name="choose" type="digits">
-      <block>
-				Your Query is {crop}. The recommended growing temperature is between {min_planting_temperature} centigrade and {max_planting_temperature} centigrade.
-				The planting period starts from the {planting_start_month}th month and ends in the {planting_end_month}th month. {description}.
-			</block>
-    </field>
+    <prompt>
+      Your Query is {crop}. The recommended growing temperature is between {min_planting_temperature} centigrade and {max_planting_temperature} centigrade.
+      The planting period starts from the {planting_start_month}th month and ends in the {planting_end_month}th month. {description}.
+    </prompt>
+    <goto next= "goodbye.xml"/>
   </form>
 </vxml>
