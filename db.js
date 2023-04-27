@@ -75,7 +75,8 @@ function _cerealKnowledgeBaseInit(client) {
   });
 }
 
-function getKnowledgeOf(client, crop, res) {
+function getKnowledgeOf(crop, res) {
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
   // "Rice" or "Cotton" or "Sorghum"
   client.query(
     `SELECT * FROM cerealKnowledgeBase WHERE Crop = ${crop}`,
