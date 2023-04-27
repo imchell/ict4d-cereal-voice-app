@@ -60,7 +60,8 @@ function _cerealKnowledgeBaseInit() {
     if (err) {
       console.error("connection error", err.stack);
     } else {
-      client.query(initQuery + initInsertion, (err, res) => {
+      // client.query(initQuery + initInsertion, (err, res) => {
+      client.query(initQuery, (err, res) => {
         if (err) {
           console.error(err);
           client.end();

@@ -3,7 +3,7 @@
   <form>
     <field name="choose" type="digits">
       <block>
-				Your Query is {Crop}.
+				Your Query is {crop}.
 			</block>
     </field>
   </form>
