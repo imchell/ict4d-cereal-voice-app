@@ -102,11 +102,12 @@ function getKnowledgeOf(crop, res) {
       console.error("connection error", err.stack);
     } else {
       client.query(
-        `SELECT * FROM cerealKnowledgeBase WHERE Crop = ${crop}`,
+        `SELECT * FROM cerealKnowledgeBase WHERE Crop = "${crop}"`,
         function (err, result) {
-          done(); // release client back to pool
           if (err) {
-            return console.error("error running query", err);
+            console.error(err);
+            client.end();
+            return;
           }
           let info = result.rows[0];
           let Crop = info.Crop;
