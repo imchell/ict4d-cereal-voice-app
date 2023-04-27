@@ -80,7 +80,7 @@ function updateMarket(type, price, quantity) {
   log("updateMarket start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   const intertionQuery = `INSERT INTO marketBase(Crop, Price, Quantity)
-    VALUES( ${type}, ${price}, ${quantity});`;
+    VALUES('${type}', '${price}', '${quantity}');`;
 
   client.connect((err) => {
     if (err) {
