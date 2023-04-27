@@ -24,7 +24,7 @@ app.get("/education.xml", (req, res) => {
 });
 
 app.get("/rice.xml", (req, res) => {
-  getKnowledgeOf("Rice", res);
+  getKnowledgeOf("rice", res);
 });
 
 app.get("/weather-forecast.xml", (req, res) => {
