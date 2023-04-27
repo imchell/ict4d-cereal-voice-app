@@ -3,7 +3,8 @@
   <form>
     <field name="choose" type="digits">
       <block>
-				Your Query is {crop}.
+				Your Query is {crop}. The recommended growing temperature is between {min_planting_temperature} centigrade and {max_planting_temperature} centigrade.
+				The planting period starts from the {planting_start_month}th month and ends in the {planting_end_month}th month. {description}.
 			</block>
     </field>
   </form>
