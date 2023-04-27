@@ -76,6 +76,33 @@ function _marketBaseInit() {
   });
 }
 
+function updateMarket(type, price, quantity) {
+  log("updateMarket start");
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
+  const intertionQuery = `INSERT INTO marketBase(Crop, Price, Quantity)
+    VALUES( ${type}, ${price}, ${quantity});`;
+
+  client.connect((err) => {
+    if (err) {
+      console.error("connection error", err.stack);
+    } else {
+      client.query(intertionQuery, function (err, result) {
+        if (err) {
+          console.error(err);
+          client.end();
+          return;
+        }
+        client.end((err) => {
+          if (err) {
+            console.error("disconnection error", err.stack);
+          }
+          log("updateMarket done");
+        });
+      });
+    }
+  });
+}
+
 function _cerealKnowledgeBaseInit() {
   log("_cerealKnowledgeBaseInit start");
 
@@ -161,4 +188,8 @@ function getKnowledgeOfCrop(crop, res) {
   });
 }
 
-module.exports = { dbInit: dbInit, getKnowledgeOfCrop: getKnowledgeOfCrop };
+module.exports = {
+  dbInit: dbInit,
+  getKnowledgeOfCrop: getKnowledgeOfCrop,
+  updateMarket: updateMarket,
+};

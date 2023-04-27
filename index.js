@@ -3,7 +3,7 @@ const render = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
-const { dbInit, getKnowledgeOfCrop } = require("./db.js");
+const { dbInit, getKnowledgeOfCrop, updateMarket } = require("./db.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -27,6 +27,7 @@ app.get("/market/:type/:price/:quantity", (req, res) => {
   const type = req.params.type;
   const price = req.params.price;
   const quantity = req.params.quantity;
+  updateMarket(type, price, quantity);
   log(
     "Market Info Added: " +
       type +
