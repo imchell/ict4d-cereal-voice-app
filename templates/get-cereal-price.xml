@@ -3,7 +3,7 @@
 	<form>
 		<field name="getcerealprice">
 			<prompt>
-				{bids}.
+				{bids}
 			</prompt>
 			<goto next="goodbye.xml"/>
 		</field>
