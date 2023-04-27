@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="actions" type="digits">
+      <prompt xml:lang="fr-fr">
+      Quelles informations souhaitez-vous consulter ?
+      Pour les informations météorologiques, appuyez sur un.
+      Pour des informations sur le marché, appuyez sur deux.
+      Pour des informations sur les céréales, appuyez sur trois.
+      </prompt>
+      <filled>
+        <if cond="actions == '1'">
+          <prompt xml:lang="fr-fr">Ok. Je vous fournirai les informations météorologiques.</prompt>
+          <goto next= "weather-fr.xml"/>
+        <elseif cond="actions == '2'" />
+          <prompt xml:lang="fr-fr">Je vous fournirai des informations sur le marché.</prompt>
+          <goto next= "market-main-fr.xml"/>
+<!--           <goto next="goodbye.xml"/> -->
+        <elseif cond="actions == '3'" />
+          <prompt xml:lang="fr-fr">Ok. Je vais vous fournir des connaissances sur les céréales.</prompt>
+          <goto next= "education-fr.xml"/>
+        <else />
+          <prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+          <goto next="actions-fr.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

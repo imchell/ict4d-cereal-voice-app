@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="market" type="digits">
+      <prompt xml:lang="fr-fr">
+      Bienvenue sur le marché en ligne ! Veuillez choisir la fonction que vous souhaitez.
+      Si vous voulez connaître le prix des céréales, appuyez sur un.
+      Si vous voulez vendre vos céréales, appuyez sur deux.
+      Si vous voulez quitter, appuyez sur trois.
+      </prompt>
+      <filled>
+        <if cond="market == '1'">
+          <prompt xml:lang="fr-fr">Vous avez choisi d'obtenir le prix d'une céréale.</prompt>
+		      <goto next="get-cereal-price-fr.xml" />
+        <elseif cond="market == '2'" />
+          <prompt xml:lang="fr-fr">Vous avez choisi de vendre vos céréales.</prompt>
+		      <goto next= "cereal-sale-fr.xml"/>
+        <elseif cond="market == '3'" />
+		      <goto next= "goodbye-fr.xml"/>
+        <else />
+          <prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+          <goto next="market-main-fr.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

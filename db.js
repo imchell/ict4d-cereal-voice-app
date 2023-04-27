@@ -76,7 +76,7 @@ function _marketBaseInit() {
   });
 }
 
-function updateMarket(type, price, quantity, res) {
+function updateMarket(type, price, quantity, res, isFrench = false) {
   log("updateMarket start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   const intertionQuery = `INSERT INTO marketBase(Crop, Price, Quantity)
@@ -92,7 +92,11 @@ function updateMarket(type, price, quantity, res) {
           client.end();
           return;
         }
-        render("market-main", {}, res);
+        if (!isFrench) {
+          render("market-main", {}, res);
+        } else {
+          render("market-main-fr", {}, res);
+        }
         client.end((err) => {
           if (err) {
             console.error("disconnection error", err.stack);
@@ -104,7 +108,7 @@ function updateMarket(type, price, quantity, res) {
   });
 }
 
-function getLatestBids(res) {
+function getLatestBids(res, isFrench = false) {
   log("getLatestBids start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
 
@@ -128,7 +132,11 @@ function getLatestBids(res) {
         let replacement = {
           bids: bids,
         };
-        render("get-cereal-price", replacement, res);
+        if (!isFrench) {
+          render("get-cereal-price", replacement, res);
+        } else {
+          render("get-cereal-price-fr", replacement, res);
+        }
         client.end((err) => {
           if (err) {
             console.error("disconnection error", err.stack);
@@ -184,7 +192,7 @@ function _cerealKnowledgeBaseInit() {
   });
 }
 
-function getKnowledgeOfCrop(crop, res) {
+function getKnowledgeOfCrop(crop, res, isFrench = false) {
   log("getKnowledgeOf start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   // "Rice" or "Cotton" or "Sorghum"
@@ -212,7 +220,12 @@ function getKnowledgeOfCrop(crop, res) {
             planting_end_month: info.planting_end_month,
             description: info.description,
           };
-          render("cereal-knowledge", replacement, res);
+          if (!isFrench) {
+            render("cereal-knowledge", replacement, res);
+          } else {
+            render("cereal-knowledge-fr", replacement, res);
+          }
+
           client.end((err) => {
             if (err) {
               console.error("disconnection error", err.stack);

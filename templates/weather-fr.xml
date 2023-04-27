@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="weather" type="digits">
+      <prompt xml:lang="fr-fr">
+     Voulez-vous obtenir des informations sur la météo ? Veuillez sélectionner la fonction que vous souhaitez.
+      Pour les prévisions météorologiques, appuyez sur un.
+      Pour obtenir des suggestions sur les plantes, appuyez sur deux.
+      </prompt>
+      <filled>
+        <if cond="weather == '1'">
+          <prompt xml:lang="fr-fr">Vous avez sélectionné les prévisions météorologiques.</prompt>
+          <goto next= "weather-forecast-fr.xml"/>
+        <elseif cond="weather == '2'" />
+          <prompt xml:lang="fr-fr">Vous avez choisi la suggestion.</prompt>
+          <goto next= "weather-suggestion-fr.xml"/>
+        <else />
+          <prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+          <goto next="weather-fr.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

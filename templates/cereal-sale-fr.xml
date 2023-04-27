@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+
+	<var name="type" />
+	<var name="price" />
+	<var name="quantity" />
+
+	<form id="selecttype">
+		<field name="cerealtype" type="digits">
+			<prompt xml:lang="fr-fr">
+				Veuillez choisir le type de céréales que vous souhaitez vendre.
+				Appuyez sur 1 pour le riz.
+				Appuyez sur 2 pour le coton.
+				Appuyez sur 3 pour le sorgho.
+			</prompt>
+			<filled>
+				<if cond="cerealtype == '1'">
+					<prompt xml:lang="fr-fr">Vous avez choisi de vendre du riz.</prompt>
+					<assign name="type" expr="'rice'" />
+					<goto next="#inputprice" />
+				<elseif cond="cerealtype == '2'" />
+					<prompt xml:lang="fr-fr">Vous avez choisi de vendre du coton.</prompt>
+					<assign name="type" expr="'cotton'" />
+					<goto next= "#inputprice"/>
+				<elseif cond="cerealtype == '3'" />
+					<prompt xml:lang="fr-fr">Vous avez choisi de vendre du sorgho.</prompt>
+					<assign name="type" expr="'sorghum'" />
+					<goto next= "#inputprice"/>
+				<else />
+					<prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+					<goto next="market-main-fr.xml" />
+				</if>
+			</filled>
+		</field>
+		<!-- <block>
+			<goto expr="'market/' + cerealsale"/>
+  	</block> -->
+	</form>
+
+	<form id="inputprice">
+		<field name="cerealprice" type="digits">
+			<prompt xml:lang="fr-fr">
+				Veuillez indiquer le prix.
+			</prompt>
+			<filled>
+				<assign name="price" expr="cerealprice" />
+				<prompt xml:lang="fr-fr">Le prix de <value expr="type" /> est <value expr="price"/>.</prompt>
+				<goto next= "#inputquantity"/>
+			</filled>
+		</field>
+	</form>
+
+	<form id="inputquantity">
+		<field name="cerealquantity" type="digits">
+			<prompt>
+				Please input the quantity.
+			</prompt>
+			<filled>
+				<assign name="quantity" expr="cerealquantity" />
+				<prompt>Le prix de <value expr="type" /> est <value expr="price" /> et la quantité est <value expr="quantity" />. Veuillez patienter.</prompt>.
+				<goto expr="'market-fr/' + type + '/' + price + '/' + quantity"/>
+			</filled>
+		</field>
+	</form>
+
+</vxml>

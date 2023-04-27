@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="weathersuggestion" type="digits">
+      <prompt xml:lang="fr-fr">
+      La meilleure céréale à planter dans de telles conditions climatiques est le riz. Merci de m'avoir écouté.
+      </prompt>
+      <goto next= "goodbye-fr.xml"/>
+    </field>
+  </form>
+</vxml>

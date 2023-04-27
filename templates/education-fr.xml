@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="education" type="digits">
+      <prompt xml:lang="fr-fr">
+      Vous pouvez maintenant choisir les plantes sur lesquelles vous voulez en savoir plus.
+      Pour des informations sur le riz, appuyez sur un.
+      Pour des informations sur le coton, appuyez sur deux.
+      Pour des informations sur le sorgho, appuyez sur trois.
+      </prompt>
+      <filled>
+        <if cond="actions == '1'">
+          <goto next="rice-fr.xml" />
+        <elseif cond="actions == '2'" />
+          <goto next="cotton-fr.xml" />
+        <elseif cond="actions == '3'" />
+          <goto next="sorghum-fr.xml" />
+        <else />
+          <prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+          <goto next="education-fr.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>

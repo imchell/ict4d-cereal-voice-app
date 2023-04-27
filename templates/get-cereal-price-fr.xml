@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+	<form>
+		<field name="getcerealprice">
+			<prompt xml:lang="fr-fr">
+				{bids}
+			</prompt>
+			<goto next="market-main-fr.xml"/>
+		</field>
+	</form>
+</vxml>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="leaving" type="digits">
+      <prompt xml:lang="fr-fr">
+      Voulez-vous une autre requête ? Appuyez sur un pour confirmer. Appuyez sur deux pour quitter l'application.
+      </prompt>
+      <filled>
+        <if cond="leaving == '1'"> 
+        <prompt xml:lang="fr-fr">L'application est redirigée vers le début.</prompt>
+        <goto next="actions-fr.xml" />
+        <else/>
+        <prompt xml:lang="fr-fr">Merci d'utiliser. Au revoir !</prompt>
+        </if> 
+      </filled>
+    </field>
+  </form>
+</vxml>

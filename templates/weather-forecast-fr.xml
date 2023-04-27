@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="forecast" type="digits">
+      <prompt xml:lang="fr-fr">
+      <!-- It is a coldy day today. Right now, the temperature is 10º centigrade. -->
+      I'm searching for Bamako weather.
+      The highest temperature in the day is {high0} centigrade, and the lowest temperature in the day is {low0} centigrade.
+      If you want to know the weather for next 6 days. Please press one. If you want to end the service. Please press two.
+      </prompt>
+      <filled>
+        <if cond="forecast == '1'">
+          <prompt xml:lang="fr-fr">Demain est une journée froide. La température la plus élevée de la journée est de {high1} centigrades, 
+et la température la plus basse de la journée est de {low1} centigrades.
+          Le lendemain est une journée ensoleillée. La température la plus élevée de la journée est de {high2} centigrades, 
+          et la température la plus basse de la journée est de {low2} centigrades. 
+          Dans trois jours, il fera beau. La température la plus élevée de la journée est de {high3} centigrades, 
+          et la température la plus basse de la journée est de {low3} centigrades.
+          Il fera beau dans quatre jours. La température la plus élevée de la journée est de {high4} centigrades, 
+          et la température la plus basse de la journée est de {low4} centigrades.
+          Il fera beau dans cinq jours. La température la plus élevée de la journée est de {high5} centigrades, 
+          et la température la plus basse de la journée est de {low5} centigrades.
+          Il fera beau dans six jours. La température la plus élevée de la journée est de {high6} centigrades, 
+          et la température la plus basse de la journée est de {low6} centigrades.
+          </prompt>
+          <goto next= "goodbye-fr.xml"/>
+        <elseif cond="forecast == '2'" />
+          <goto next= "goodbye-fr.xml"/>
+        <else />
+          <prompt xml:lang="fr-fr">Votre choix n'est pas valable.</prompt>
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>
