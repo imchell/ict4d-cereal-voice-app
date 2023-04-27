@@ -3,7 +3,7 @@ const render = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
-const { dbInit, getKnowledgeOf } = require("./db.js");
+const { dbInit, getKnowledgeOfCrop } = require("./db.js");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -24,15 +24,15 @@ app.get("/education.xml", (req, res) => {
 });
 
 app.get("/rice.xml", (req, res) => {
-  getKnowledgeOf("rice", res);
+  getKnowledgeOfCrop("rice", res);
 });
 
 app.get("/cotton.xml", (req, res) => {
-  getKnowledgeOf("cotton", res);
+  getKnowledgeOfCrop("cotton", res);
 });
 
 app.get("/sorghum.xml", (req, res) => {
-  getKnowledgeOf("sorghum", res);
+  getKnowledgeOfCrop("sorghum", res);
 });
 
 app.get("/weather-forecast.xml", (req, res) => {

@@ -78,7 +78,7 @@ function _cerealKnowledgeBaseInit() {
   });
 }
 
-function getKnowledgeOf(crop, res) {
+function getKnowledgeOfCrop(crop, res) {
   log("getKnowledgeOf start");
   const client = new Client({ connectionString: process.env.DATABASE_URL });
   // "Rice" or "Cotton" or "Sorghum"
@@ -119,4 +119,4 @@ function getKnowledgeOf(crop, res) {
   });
 }
 
-module.exports = { dbInit: dbInit, getKnowledgeOf: getKnowledgeOf };
+module.exports = { dbInit: dbInit, getKnowledgeOfCrop: getKnowledgeOfCrop };
