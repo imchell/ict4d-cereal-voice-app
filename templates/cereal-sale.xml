@@ -9,8 +9,7 @@
 			<goto next="goodbye.xml"/> -->
 		</field>
 		<block>
-			<var name="endpoint" expr="'market/' + cerealsale"/>
-    	<goto next="#redirect"/>
+			<goto expr="'market/' + cerealsale"/>
   	</block>
 	</form>
 
