@@ -1,17 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
-	<form>
-		<field name="cerealsale" type="digits">
+
+	<var name="type" />
+	<var name="price" />
+	<var name="quantity" />
+
+	<form id="selecttype">
+		<field name="cerealtype" type="digits">
 			<prompt>
-				Please leave a message at the tone and report the type, quantity, and price of the cereal you wish to sell.
+				Please choose the type of cereal you want to sell.
+				Press 1 for rice.
+				Press 2 for cotton.
+				Press 3 for sorghum.
 			</prompt>
-			<!-- <record name="salereport" beep="true" maxtime="30s" finalsilence="500ms" dtmfterm="true" type="audio/x-wav"/>
-			<goto next="goodbye.xml"/> -->
+			<filled>
+				<if cond="cerealtype == '1'">
+					<prompt>You have selected to sell rice.</prompt>
+					<assign name="type" expr="'rice'" />
+					<goto next="#inputprice" />
+				<elseif cond="cerealtype == '2'" />
+					<prompt>You have selected to sell cotton.</prompt>
+					<assign name="type" expr="'cotton'" />
+					<goto next= "#inputprice"/>
+				<elseif cond="cerealtype == '3'" />
+					<prompt>You have selected to sell sorghum.</prompt>
+					<assign name="type" expr="'sorghum'" />
+					<goto next= "#inputprice"/>
+				<else />
+					<prompt>Your choice is not valid.</prompt>
+					<goto next="market-main.xml" />
+				</if>
+			</filled>
 		</field>
-		<block>
+		<!-- <block>
 			<goto expr="'market/' + cerealsale"/>
-  	</block>
+  	</block> -->
 	</form>
 
-	<submit next="" id="redirect" method="get" namelist="endpoint"/>
+	<form id="inputprice">
+		<field name="cerealprice" type="digits">
+			<prompt>
+				Please input the price.
+			</prompt>
+			<filled>
+				<assign name="price" expr="cerealprice" />
+				<prompt>The price of <value expr="type" /> is <value expr="price"/>.</prompt>
+				<goto next= "#inputquantity"/>
+			</filled>
+		</field>
+	</form>
+
+	<form id="inputquantity">
+		<field name="cerealquantity" type="digits">
+			<prompt>
+				Please input the quantity.
+			</prompt>
+			<filled>
+				<assign name="quantity" expr="cerealquantity" />
+				<prompt>The price of <value expr="type"> is <value expr="price"/> and the quantity is <value expr="quantity">. Please Wait.</prompt>.
+				<goto expr="'market/' + type + '/' + price + '/' + quantity"/>
+				<prompt>We have updated the market. Thank you!</prompt>
+			</filled>
+		</field>
+	</form>
+
 </vxml>

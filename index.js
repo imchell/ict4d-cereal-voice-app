@@ -23,9 +23,18 @@ app.get("/cereal-sale.xml", (req, res) => {
   render("cereal-sale", {}, res);
 });
 
-app.get("/market/:quantity", (req, res) => {
+app.get("/market/:type/:price/:quantity", (req, res) => {
+  const type = req.params.type;
+  const price = req.params.price;
   const quantity = req.params.quantity;
-  log(quantity);
+  log(
+    "Market Info Added: " +
+      type +
+      " at the price of " +
+      price +
+      " with the quantity of " +
+      quantity
+  );
 });
 
 app.get("/education.xml", (req, res) => {
