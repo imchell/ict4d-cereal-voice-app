@@ -27,6 +27,14 @@ app.get("/rice.xml", (req, res) => {
   getKnowledgeOf("rice", res);
 });
 
+app.get("/cotton.xml", (req, res) => {
+  getKnowledgeOf("cotton", res);
+});
+
+app.get("/sorghum.xml", (req, res) => {
+  getKnowledgeOf("sorghum", res);
+});
+
 app.get("/weather-forecast.xml", (req, res) => {
   axios
     .get(

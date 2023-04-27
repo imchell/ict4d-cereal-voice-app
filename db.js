@@ -106,7 +106,7 @@ function getKnowledgeOf(crop, res) {
             planting_end_month: info.planting_end_month,
             description: info.description,
           };
-          render(crop, replacement, res);
+          render("cereal-knowledge", replacement, res);
           client.end((err) => {
             if (err) {
               console.error("disconnection error", err.stack);
