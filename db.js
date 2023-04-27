@@ -34,6 +34,48 @@ function dbInit() {
   _cerealKnowledgeBaseInit();
 }
 
+function _marketBaseInit() {
+  log("_marketBaseInit start");
+
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
+  const initQuery = `
+  CREATE TABLE IF NOT EXISTS marketBase (
+    Crop TEXT,
+    Price INTEGER,
+    Quantity INTEGER
+  );`;
+
+  const initInsertion = `INSERT INTO marketBase(Crop, Price, Quantity)
+    VALUES( 'rice', '20', '350');
+      INSERT INTO marketBase(Crop, Price, Quantity)
+    VALUES( 'cotton', '15', '100');
+      INSERT INTO marketBase(Crop, Price, Quantity)
+    VALUES( 'sorghum', '0', '0');
+    `;
+
+  client.connect((err) => {
+    if (err) {
+      console.error("connection error", err.stack);
+    } else {
+      // client.query(initQuery + initInsertion, (err, res) => {
+      client.query(initQuery, (err, res) => {
+        if (err) {
+          console.error(err);
+          client.end();
+          return;
+        }
+        client.end((err) => {
+          if (err) {
+            console.error("disconnection error", err.stack);
+          }
+          log("_marketBaseInit done");
+        });
+      });
+    }
+  });
+}
+
 function _cerealKnowledgeBaseInit() {
   log("_cerealKnowledgeBaseInit start");
 

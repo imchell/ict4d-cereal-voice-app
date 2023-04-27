@@ -5,9 +5,11 @@
 			<prompt>
 				Please leave a message at the tone and report the type, quantity, and price of the cereal you wish to sell.
 			</prompt>
-				
-			<record name="salereport" beep="true" maxtime="30s" finalsilence="500ms" dtmfterm="true" type="audio/x-wav"/>
-			<goto next="goodbye.xml"/>
+			<!-- <record name="salereport" beep="true" maxtime="30s" finalsilence="500ms" dtmfterm="true" type="audio/x-wav"/>
+			<goto next="goodbye.xml"/> -->
 		</field>
+		<block>
+			<prompt>The sum of the numbers you entered is <value expr="cerealsale"/>.</prompt>
+  	</block>
 	</form>
 </vxml>
