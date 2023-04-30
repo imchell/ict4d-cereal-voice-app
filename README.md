@@ -1,10 +1,16 @@
 # Improving Cereal Seed Systems in Rural Mali
 
-The app is deployed on [voxeo](evolution.voxeo.com) (voice browser) and [fly.io](fly.io) (backend).
+The app is deployed on [Voxeo](evolution.voxeo.com) (voice browser) / [VXML Tester](https://vxml-tester.kasadaka.com/) and [fly.io](fly.io) (backend).
+
+## Voxeo Deployment
 
 The Voice URL in voxeo config should be https://ict4d-app.fly.dev/greeting.xml .
 
 ![illustration](sample.png)
+
+## VXML Tester Deployment
+
+Upload `entry-for-vxml-tester.xml` and set it as the entry.
 
 ## Setup
 
