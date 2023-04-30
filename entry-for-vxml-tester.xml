@@ -5,6 +5,9 @@
    http://www.w3.org/TR/voicexml20/vxml.xsd"
    version="2.0">
   <form>
-    <prompt>Hello World!</prompt>
+    <block>
+      Hello
+      <goto next="https://ict4d-app.fly.dev/greeting.xml" />
+    </block>
   </form>
 </vxml>

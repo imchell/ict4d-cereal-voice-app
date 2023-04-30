@@ -5,10 +5,12 @@
    http://www.w3.org/TR/voicexml20/vxml.xsd"
    version="2.0">
   <form>
-    <prompt>
-      Your Query is {crop}. The recommended growing temperature is between {min_planting_temperature} centigrade and {max_planting_temperature} centigrade.
-      The planting period starts from the {planting_start_month}th month and ends in the {planting_end_month}th month. {description}.
-    </prompt>
-    <goto next= "goodbye.xml"/>
+    <block>
+      <prompt>
+        Your Query is {crop}. The recommended growing temperature is between {min_planting_temperature} centigrade and {max_planting_temperature} centigrade.
+        The planting period starts from the {planting_start_month}th month and ends in the {planting_end_month}th month. {description}.
+      </prompt>
+      <goto next= "goodbye.xml"/>
+    </block>
   </form>
 </vxml>

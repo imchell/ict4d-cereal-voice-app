@@ -5,11 +5,11 @@
    http://www.w3.org/TR/voicexml20/vxml.xsd"
    version="2.0">
   <form>
-    <field name="weathersuggestion" type="digits">
+    <block>
       <prompt>
       The best cereals for plant in such weather is rice. Thank you for listening.
       </prompt>
       <goto next= "goodbye.xml"/>
-    </field>
+    </block>
   </form>
 </vxml>
