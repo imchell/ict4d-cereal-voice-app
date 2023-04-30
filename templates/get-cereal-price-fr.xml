@@ -5,11 +5,11 @@
    http://www.w3.org/TR/voicexml20/vxml.xsd"
    version="2.0">
 	<form>
-		<field name="getcerealprice">
+		<block>
 			<prompt xml:lang="fr-fr">
 				{bids}
 			</prompt>
 			<goto next="market-main-fr.xml"/>
-		</field>
+		</block>
 	</form>
 </vxml>

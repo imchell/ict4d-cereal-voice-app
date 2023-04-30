@@ -6,7 +6,7 @@
    version="2.0">
   <form>
     <block>
-      Hello
+      Connecting.
       <goto next="https://ict4d-app.fly.dev/greeting.xml" />
     </block>
   </form>
