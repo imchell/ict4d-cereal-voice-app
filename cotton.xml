@@ -1,1 +1,175 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="actions" type="digits">
+      <prompt>
+        
+      What information do you want to check?
+      For Cotton Plant Information, press one.
+      For how to Grow Cotton, press two.
+      For cotton growing conditions, press three.
+      For cotton seeding, seeding rate and number of plants, press four.
+      For Fertilization Requirements for Cotton Plants, press five.
+      For Cotton Water Requirements, press six.
+      For Cotton Harvest and Yield, press seven.
+      For Weed Control in Cotton, press eight.
+      If you want go back to actions, press zero.
+      </prompt>
+      <filled>
+         <if cond="actions == '0'">
+          <prompt>Ok. Now you are going back to actions.</prompt>
+          <goto next= "actions.xml"/>
+        <if cond="actions == '1'">
+          <prompt>
+            The cotton plant is a shrub that is widely cultivated in more than 90 countries for the production of fiber 
+            and to a lesser extent, seeds. 
+            About 2.5% of the world's arable land is used for cotton cultivation. 
+            It is an angiosperm, dicotyledonous plant belonging to the Mallowaceae family. 
+            Cotton is native to Asia and Africa. 
+            Like tomatoes, peppers and other plants, cotton is a perennial in its native place, but today we cultivate it as an annual. 
+            This means we plant the seeds in the spring and harvest the cotton in the fall. 
+            Afterwards plow and destroy the plants, and reseed the following spring in the clearing.
+            Cotton is grown in regions with warmer climates. 
+            China, the United States, Uzbekistan, Brazil and Turkey are the world's leading cotton producers. 
+            In the United States, cotton is grown commercially mainly in the southern states 
+            such as Texas, California, Georgia, Arkansas, Oklahoma and so on.
+          </prompt>
+          <goto next= "cotton.xml"/>
+        <elseif cond="actions == '2'" />
+          <prompt>
+          Cotton Like tomatoes, peppers, and other plants, cotton plants are perennial in nature. 
+            However, since we want a fairly even and satisfying yield each year, it is grown as an annual. 
+            Unfortunately, cotton can only be grown commercially in areas with specific growing conditions. 
+            Buying fresh and carefully selected cotton seeds is the first step to getting the desired yield. 
+            The second step is to field prepare to welcome the seeds and facilitate their germination. 
+            Sowing of cotton seeds takes place in spring. 
+            Fertilization, irrigation and pest control are the keys to good yields and are where most of the cost comes from. 
+            Unfortunately, cotton plants are very sensitive to various weeds. 
+            They compete with cotton plants for water, nutrients and sunlight. 
+            Cotton weed control techniques and management vary widely from country to country.
+            Cotton is harvested in the fall. 
+            Immediately after harvesting, we destroy the plants so that they can be sown again in the open field the following spring.
+            In most parts of the United States, planting occurs March-May and harvest occurs August to October. 
+            In Australia, the sowing time is September-November and the harvest time is March-May.  
+         </prompt>
+          <goto next= "cotton.xml"/>
+        <elseif cond="actions == '3'" />
+          <prompt>
+            Cotton is a plant that requires long frost-free periods, lots of heat, and full sun. 
+            It likes warm and humid climates. 
+            Cotton seeds will have poor germination rates if the soil temperature is below 60°F (15°C). 
+            During active growth, the ideal air temperature is 70-100°F (21-37°C). 
+            Temperatures well above 100°F are not advisable. 
+            However, the average cotton plant can survive short-term temperatures up to 110°F (43°C) without noticeable damage. 
+            However, the severity of the problem caused by high temperatures depends on the humidity level. 
+            In order to successfully grow cotton plants, we must not have frequent rainfall during the ripening and harvest periods.
+            
+            Cotton will grow in almost any well-drained soil. 
+            However, soils suitable for high yields are considered to be deep, well-drained sandy loams with sufficient clay, 
+            organic matter, and moderate nitrogen and phosphorus concentrations. 
+            The best yields tend to be achieved in calcium carbonate-rich loam soils. 
+            A gentle slope is also sometimes required and generally aids in drainage.
+            We started prepping the field after harvest in the fall with a good plow to a depth of about 14 inches (35 cm). 
+            In this way we incorporate the remaining plants into the soil to improve the soil texture. 
+            In late winter, we check for weeds and plow again to get our soil conditioned and ready for cotton seed.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <elseif cond="actions == '4'" />
+          <prompt>Cotton seeds are one of the most important parameters for a good yield. 
+            Growers should only use certified seeds and avoid sowing seeds that have a shelf life of more than 2 years.
+           We sow cotton seeds directly in the fields with special seeders. 
+            These machines make small trenches for the seeds to a predetermined depth, place the seeds in them at a certain distance, 
+            and then cover them lightly with soil. 
+            In most cases, these machines also apply a predetermined amount of granular fertilizer between the seeds. 
+            We add an average of 55 lbs of cotton seed and 440 lbs of fertilizer per hectare in the planter. 
+            Sow seeds 1.5 – 2 inches deep. To facilitate mechanical harvesting, we leave an average of 3 feet between rows. 
+            On the seeding line, when we sow, the seeds are spaced an average of 3 inches apart. 
+            On average we have about 90,000-100,000 plants per hectare. 
+            Therefore, the average number of cotton plants per acre is 40,000. 
+            However, in some cases we can reach 70,000 cotton plants per acre, 
+            but this can only be achieved by selecting specific varieties.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <elseif cond="actions == '5'" />
+          <prompt>
+          As with any crop, there is no universal fertilization regimen, as every field is different and has different needs. 
+            Ideally, an annual soil analysis is extremely important in diagnosing nutrient deficiencies 
+            and taking corrective action under the direction of a licensed agronomist. 
+            However, we will list the most common methods regarding fertilizing cotton plants.
+            As a first rule of thumb, cotton plants consume double the amount of nitrogen compared to phosphorus and potassium. 
+            Therefore, if soil analysis is not available, N-P-K 20-10-10 fertilizer is more appropriate. 
+            A common fertilization schedule for many cotton growers is to 
+            add 440 pounds of N-P-K 20-10-10 per hectare by drill during planting 
+            and 440 pounds per hectare of N-P-K 20-10-10 during flowering (early summer). 
+            Note that 1 hectare = 10,000 square meters = 2.47 acres.
+            Another standard fertilization program is to add 550 pounds of ammonium nitrate, 
+            400 pounds of N-P-K 0-46-0 and 400 pounds of N-P-K 0-0-50 per hectare throughout the year. 
+            These amounts are usually divided evenly over 8 applications, 
+            the first after planting, and the effects last about 6 weeks after flowering. 
+            However, these are only common patterns and should not be followed without doing your own research and soil analysis.
+            In other cases, farmers like to spray KNO3 on the leaves once a week after the first flowers appear. 
+            Foliar spraying can provide fertilizers and pesticides at the same time, reducing labor costs.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <elseif cond="actions == '6'" />
+          <prompt>
+          According to experience, from germination to cotton boll formation, cotton plants need at least 500 mm of water. 
+            A large amount of U.S. cotton is grown on non-irrigated fields. 
+            However, growing cotton commercially without providing an additional water supply is not an easy task. 
+            The problem is not that the cotton plant needs water to thrive, 
+            but because it needs water at a particular time during its development. 
+            If you choose to rely entirely on rain, your cotton yields are at risk and may fluctuate from year to year.
+            In areas where there is not enough rainfall in winter, farmers will irrigate fields with plenty of water before planting. 
+            In most cases, farmers do not irrigate during the time between planting and flowering. 
+            Once the plants bloom, cotton growers begin to water more frequently, every 5-7 days, depending on other parameters. 
+            About 140 days after planting or 45 days after the bolls appear, 
+            the bolls will begin to split naturally along the boll segment and begin to dry out. 
+            Around the end of summer, many farmers stop irrigation or lightly irrigate every two weeks to help the cotton dry faster 
+            and better. The most widely used system by professional farmers is drip irrigation.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <elseif cond="actions == '7'" />
+          <prompt>
+          Cotton is usually ready for harvest 5 to 6 months after planting. 
+            As with any crop, knowing exactly when to harvest takes years of experience. 
+            Harvest with cotton harvester in autumn. 
+            These machines, usually large tractors, strip the fibers from the plants and collect the bolls. 
+            Immediately after harvest, the remaining cotton plants are destroyed with a shredder, and the fields are then plowed well.
+            On average, we can harvest 4,400 to 8,800 pounds of cotton per hectare, or 1,760 to 3,527 pounds per acre. 
+            What we harvest from the fields is called unmilled cotton and it is not traded.
+            We have to hand the cotton over to the cotton gin, a machine that quickly 
+            and easily separates the cotton fibers from their seeds and other objects. 
+            It is estimated that 1 pound of unmilled cotton contains 32 to 33 percentage cotton fiber, 52 to 54 percentage cottonseed 
+            and about 15% foreign matter such as stones, leaves, soil and so on. 
+            However, these figures can be significantly skewed.
+            Therefore, expected yields for ginned cotton range from 1,455 to 2,932 pounds per hectare, 
+            or 589 to 1,187 pounds per acre. Note that these figures may vary significantly.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <elseif cond="actions == '8'" />
+          <prompt>
+          Cotton plants are very sensitive to weeds, which actively compete with the plants for water, sunlight and valuable nutrients. 
+            It is essential for all farmers to have a sound weed control strategy in place before starting to sow. 
+            Necessary control measures may vary considerably in different countries, climate zones, legal frameworks, means of production and so on.
+            Especially in the first 60 days after sowing, even very few weeds can negatively affect plant growth and ultimately fiber production.
+            The first measures to control weeds are done during the first tillage before planting. 
+            Then, depending on the texture of each field and the most common weeds in each area, 
+            farmers typically spray with a variety of chemicals until the plants are well established. 
+            A critical step in effective weed control is frequent tilling of the areas between plant rows. 
+            This distance can vary from 2 to 4 feet, and farmers must be careful not to damage any part of the cotton plant 
+            when doing the tillage. 
+            Tilling the areas between planting rows will not only destroy any new growth of weeds, 
+            but will also increase the aeration of the field. 
+            In areas where contemporary broad-spectrum herbicides are not used, 
+            farmers typically till once or twice a month during the vigorous growing period, with a final till after flowering.
+            Many experienced farmers also sow wheat or barley immediately after harvesting cotton to reduce weeds.
+          </prompt>
+          <goto next= "cotton.xml"/>
+          <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="actions.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>
