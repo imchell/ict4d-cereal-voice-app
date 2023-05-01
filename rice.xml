@@ -66,13 +66,97 @@
 </prompt>
           <goto next="rice.xml" />
 	<elseif cond="choose == '4'" />
-          <prompt>Ok. The service is in French now.</prompt>
+          <prompt>
+		  The first step in the nutritional management of rice is fertilization.
+		  One of the most common problems in rice production is nitrogen deficiency. 
+		  It usually occurs during a critical growth stage (panicle development) when the plant needs more nitrogen. 
+		  We can recognize these nitrogen deficiency symptoms by a strong discoloration of the crop. 
+		  Nitrogen deficiency can be managed through effective nitrogen fertilization, adequate plant spacing, 
+		  and proper water management. 
+		  It is also important to control weeds that compete with rice for nitrogen, 
+		  and consultation with a local licensed agronomist is recommended.
+		
+		Sufficient nitrogen application helps rice grow rapidly and provides us with high-quality grains. 
+		  However, if nitrogen is applied in excess of the rice's needs, 
+		  the overuse of nitrogen can lead to vigorous growth that attracts large numbers of pests. 
+		  Nitrogen excess can be identified by looking at the leaves. 
+		  Because in most cases the leaf color is an unusual green. 
+		  Additionally, plants may have elongated stems. 
+		  Farmers can often prevent excess nitrogen by checking the nitrogen concentration in the soil 
+		  and then applying enough nitrogen to meet the needs of rice.
+		
+		  Potassium is also very important for achieving high yield in rice. 
+		  It aids in plant disease resistance, root growth, thickness, leaf durability, panicle initiation and development. 
+		  Potassium deficiency has a great impact on crop growth. 
+		  These potassium deficiencies can be identified by the following symptoms.
+		  First, there are black spots on the older leaves. The plant is dark green with yellow to brown leaves.
+		Second, the leaves on the lower part of the plant may tend to curve downward.
+		Third, the leaves on the upper part of the plant are short and dark green in color.
+		Fourth, there are spots of necrosis on the panicles.
+		Fifth, unhealthy root conditions. The roots are black, decreasing in density and length.
+		Sixth, the leaves wilt early.
+		</prompt>
           <goto next="rice.xml" />
 	<elseif cond="choose == '5'" />
-          <prompt>Ok. The service is in French now.</prompt>
+          <prompt>
+		There are three main types of insect pests in rice.
+		  The first are rice planthoppers and leafhoppers; rice planthoppers often attack rice stems. 
+		  Leafhoppers, in contrast, attack the aerial parts of plants. Attacked plants develop a dark brown color, as if burned.
+		  The second type is leaf-eating insects; that is, a large number of insects that come to the rice leaves to obtain food.
+		  The third is an insect that attacks the grain. 
+		  The rice bug, known as the rice bug, specializes in attacking immature plants and feeding on their grains.
+		  
+		  There are also many kinds of diseases.
+		  The first is bacterial wilt; this disease is caused by the bacteria Xanthomonas. 
+		  Often occurs in temperate and tropical climates with high humidity. 
+		  The main lesions are yellowing of the leaves.
+		  The second is bacterial streak; this disease is also caused by Xanthomonas. 
+		  It can be found on unhealthy and injured plants in areas with high humidity. 
+		  Bacterial streak is the cause of dry and discolored leaves. 
+		  The third is brown spot; it is a fungal disease that mainly infects leaves and panicles. 
+		  Large brown spots begin to spread on the leaves. 
+		  It is one of the most destructive rice diseases and is often seen in fields with high humidity.
+		  The best way to control these pests and diseases is prevention. 
+		  Rice farmers can consider the following measures.
+		  Between seasons, the fields and equipment used in the paddy fields must be properly cleaned. 
+		  And use certified torrents. Avoid over fertilizing. 
+		  In many cases, do not apply pesticides for 40 days after planting. 
+		  Store grains properly. 
+		  Try to keep the grain stored in containers with 13-14% humidity.
+		</prompt>
           <goto next="rice.xml" />
 	<elseif cond="choose == '0'" />
-          <prompt>Ok. Now you can choose your action again.</prompt>
+          <prompt>Why is it so important to harvest on time?
+		  The biological cycle of rice, that is, the number of days from emergence to harvest, varies from 95 days to nearly 250 days. 
+		  Moderately mature varieties are ready to harvest 120 to 150 days after planting. 
+		  When the kernels start to turn yellow and become hard, we can estimate when to harvest.
+		  To be able to maximize the quality and yield of the grain, it is very important to harvest the rice crop on time. 
+		  If we harvest too early, the collected grains will be immature, they will have poor milling resilience and will break easily. 
+		  On the other hand, if the crop is harvested too late, grains can fall from the panicles, causing serious losses. 
+		  Generally, harvesting begins only when the grains are 80-85% ripe or golden in color.
+		  Harvesting can be done manually or mechanically. 
+		  During manual harvesting, workers use sharp knives to collect rice stalks from the paddy field. 
+		  They then carefully wash and separate the damaged rice plants. 
+		  Mechanical harvesting can be done with a combination of machines for all operations such as cutting, threshing and cleaning.
+		  
+		  Drying is an important process to reduce the moisture content of grain. 
+		  After harvest, grain typically contains about 25% moisture. 
+		  If we let the grain grow after harvesting, it can cause discoloration and possible attack by pests. 
+		  Therefore, before storing the grain, in most cases farmers dry the grain. There are two drying methods. 
+		  Traditional and mechanical methods. 
+		  In most cases, grain must be dried within 24 hours of harvest.
+		  Due to its low and almost zero cost, traditional drying methods are preferred and adopted in many countries. 
+		  We can dry the rice grains by exposing them to sunlight. 
+		  Workers can spread the grains on carpet or sidewalks until they dry.
+		  
+		  In addition, mechanical drying can also be used. 
+		  This method is based on removing moisture from the grain with heated air. 
+		  This needs to be done with a different type of dryer.
+		  The average yield of rice (seed) is 3-6 tons per hectare. 
+		  In some countries, such as Australia and Egypt, yields can increase to a staggering 10-12 tons or more per hectare. 
+		  Of course, such high yields can be achieved by experienced farmers after years of practice.
+		  If you want go back to action select, press zero in next step.
+		</prompt>
           <goto next="rice.xml" />
         <else />
           <prompt>Your choice is not valid.</prompt>
