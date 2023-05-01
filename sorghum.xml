@@ -1,1 +1,78 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml version="2.1">
+  <form>
+    <field name="actions" type="digits">
+      <prompt>
+      What information do you want to check?
+      If you want to go back to actions choices, press zero.
+      For general information, press one.
+      For land preparation, press two.
+      For seed treatment, press three.
+      For sowing method, press four.
+      For field management, press five.
+      For pest control, press six.
+      </prompt>
+      <filled>
+        <if cond="actions == '0'">
+          <prompt> Now you are going back to actions page.</prompt>
+          <goto next= "actions.xml"/>
+        <elseif cond="actions == '1'" />
+          <prompt>Sorghum planting can be divided into spring cropping and autumn cropping, 
+            which should be determined according to individual planting conditions and local climate conditions. 
+            Usually the sowing period of spring crops is from the end of March to mid-April of the lunar calendar. 
+            The time should not be too early, because the temperature of early sowing is low, the growth is slow, 
+            and it is easy to die in cold currents. 
+            For autumn crops, sowing should be done between the end of May and the end of June in the lunar calendar. 
+            The time should not be too late, so as not to encounter low temperatures in the middle and late stages of growth, 
+            which will affect growth and delay maturity.
+          </prompt>
+          <goto next= "market-main.xml"/>
+          <elseif cond="actions == '2'" />
+          <prompt>
+            Sorghum has no strict requirements on the soil and can be planted in general plots, 
+            but it should be avoided as far as possible in the plots of heavy stubble and stubble. 
+            Due to the well-developed root system of sorghum, deep plowing should be carried out when planting sorghum. 
+            When cultivating the land, it is best to control the depth of the cultivated land at 20-25 cm, 
+            and at the same time combine the fertilization of the soil, which is conducive to the increase of sorghum planting yield.
+          </prompt>
+          <goto next= "market-main.xml"/>
+        <elseif cond="actions == '3'" />
+          <prompt>There are two kinds of sowing methods: on-demand and drill. 
+            Generally, drill is the main method. 
+            The seeds are evenly spread in the planting ditch and then covered with soil about 3 cm thick. 
+            It is advisable to sow sorghum at a depth of 3 to 4.5 centermeters, and suppress it in time after sowing, 
+            and use 20 kg per hectare with a general seed amount.
+          </prompt>
+          <goto next= "education.xml"/>
+           <elseif cond="actions == '4'" />
+          <prompt>
+          Thinning and retaining seedlings.
+            Thin the seedlings when the seedlings grow 3-4 leaves, and thin the seedlings with 5 to 6 leaves. 
+            The principle of keeping seedlings is that large ears are easy to thin, and small ears are easy to dense. 
+            Generally, when keeping seedlings, it is necessary to ensure that the density of seedlings is 105,000-120,000 plants per hm2.
+            Intertillage weeding.
+            During the growth period of sorghum, according to the occurrence of weeds, implement intertillage weeding 2 to 3 times, 
+            especially in the early growth period, pay special attention to weed removal, so as not to affect the growth. 
+            Water and fertilizer management.
+            Sorghum is drought-tolerant, but in the period of young ear formation and milk maturity, 
+            in case of drought, the yield will be greatly affected, and appropriate irrigation should be given. 
+            In the rainy season, accumulated water should be removed at any time to avoid pests and diseases 
+            and prolong the maturity period; fertilization must first be applied in time after the sorghum emerges. 
+            Secondly, urea and agricultural fertilizers should be topdressed at the sorghum jointing stage, booting stage, and filling stage.
+          </prompt>
+          <goto next= "education.xml"/>
+           <elseif cond="actions == '5'" />
+          <prompt>
+            The key points of pest control in sorghum high-yield planting technology are the control of white spot, smut, armyworm, and corn borer. 
+            The focus is on prevention, and agronomic measures, physical measures, 
+            chemical prevention and control measures can be used for targeted treatment.
+          </prompt>
+          <goto next= "education.xml"/>
+        <else />
+          <prompt>Your choice is not valid.</prompt>
+          <goto next="actions.xml" />
+        </if>
+      </filled>
+    </field>
+  </form>
+</vxml>
