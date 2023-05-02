@@ -3,7 +3,7 @@
   <form>
     <field name="education" type="digits">
       <prompt>
-      Now, you can choose which plants you want to know further.
+      Now, you can choose which plants you want to know further, please choose one.
       For rice information, press one.
       For cotton information, press two.
       For sorghum knowledge, press three.
