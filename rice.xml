@@ -10,12 +10,12 @@
 	For Nutritional Management of Rice and Rice Fertilization, press four.
 	For Rice Pests and Diseases, press five.
 	For Rice Harvesting, Yield per Hectare and Storage, press six.
-	If you want go back to action select, press zero.
+	If you want go end this rice information, press zero.
       </prompt>
       <filled>
         <if cond="rice == '0'">
-          <prompt>Now you can go back to action choices.</prompt>
-          <goto next="actions.xml" />
+          <prompt>Now you can end the rice information.</prompt>
+          <goto next="goodbye.xml" />
 	<if cond="rice == '1'">
           <prompt>Rice is grown in 3 main ways:
 	The first is grown in lowlands or rice fields. 
