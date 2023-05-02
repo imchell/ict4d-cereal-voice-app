@@ -35,7 +35,7 @@
 	Water also prevents weeds from growing.
 
 </prompt>
-          <goto next="education.xml" />
+          <goto next="rice.xml" />
         <elseif cond="rice == '2'" />
           <prompt>Rice is a resilient plant that can grow in almost all types of soil. 
 	It can grow in wet or dry land as long as it is well watered.
