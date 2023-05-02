@@ -16,7 +16,7 @@
         <if cond="rice == '0'">
           <prompt>Now you can end the rice information.</prompt>
           <goto next="goodbye.xml" />
-	<if cond="rice == '1'">
+	<elseif cond="rice == '1'">
           <prompt>Rice is grown in 3 main ways:
 	The first is grown in lowlands or rice fields. 
 	Rice is grown on submerged land, either rain-fed or irrigated. 
@@ -66,7 +66,7 @@
 	Rice seedlings are usually ready to transplant when they are 8 to 12 inches tall. 
 	We transplanted rice seedlings linearly into the field in an 8" by 8" scheme, 
 	that is, 8 inches between plants in rows and 8 inches between each row).
-</prompt>
+	</prompt>
           <goto next="rice.xml" />
 	<elseif cond="rice == '4'" />
           <prompt>
@@ -79,7 +79,7 @@
 		  It is also important to control weeds that compete with rice for nitrogen, 
 		  and consultation with a local licensed agronomist is recommended.
 		
-		Sufficient nitrogen application helps rice grow rapidly and provides us with high-quality grains. 
+		  Sufficient nitrogen application helps rice grow rapidly and provides us with high-quality grains. 
 		  However, if nitrogen is applied in excess of the rice's needs, 
 		  the overuse of nitrogen can lead to vigorous growth that attracts large numbers of pests. 
 		  Nitrogen excess can be identified by looking at the leaves. 
@@ -161,7 +161,7 @@
 		  If you want go back to action select, press zero in next step.
 		</prompt>
           <goto next="rice.xml" />
-        <else />
+        <else/>
           <prompt>Your choice is not valid.</prompt>
           <goto next="rice.xml" />
         </if>
