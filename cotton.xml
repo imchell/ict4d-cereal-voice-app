@@ -18,7 +18,7 @@
          <if cond="actions == '0'">
           <prompt>Ok. Now you can end this cotton information.</prompt>
           <goto next= "goodbye.xml"/>
-        <if cond="cotton == '1'">
+        <elseif cond="cotton == '1'">
           <prompt>
             The cotton plant is a shrub that is widely cultivated in more than 90 countries for the production of fiber 
             and to a lesser extent, seeds. 
