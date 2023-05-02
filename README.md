@@ -1,6 +1,6 @@
 # Improving Cereal Seed Systems in Rural Mali
 
-The app is deployed on [Voxeo](evolution.voxeo.com) (voice browser) / [VXML Tester](https://vxml-tester.kasadaka.com/) and [fly.io](fly.io) (backend).
+The app is deployed on [Voxeo](evolution.voxeo.com) (voice browser) / [VXML Tester](https://vxml-tester.kasadaka.com/) and [fly.io](fly.io) (backend). The implementation details and test methods were recorded in the report (Section 7).
 
 ## Voxeo Deployment
 
