@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
   <form>
-    <field name="choose" type="digits">
+    <field name="rice" type="digits">
       <prompt>
         Now you chan choose what you want to know further about rice.
         For general information about rice, press one.
@@ -13,7 +13,10 @@
 	If you want go back to action select, press zero.
       </prompt>
       <filled>
-        <if cond="choose == '1'">
+        <if cond="rice == '0'">
+          <prompt>Now you can go back to action choices.</prompt>
+          <goto next="actions.xml" />
+	<if cond="rice == '1'">
           <prompt>Rice is grown in 3 main ways:
 	The first is grown in lowlands or rice fields. 
 	Rice is grown on submerged land, either rain-fed or irrigated. 
@@ -32,8 +35,8 @@
 	Water also prevents weeds from growing.
 
 </prompt>
-          <goto next="rice.xml" />
-        <elseif cond="choose == '2'" />
+          <goto next="education.xml" />
+        <elseif cond="rice == '2'" />
           <prompt>Rice is a resilient plant that can grow in almost all types of soil. 
 	It can grow in wet or dry land as long as it is well watered.
 	It can grow in wet or dry land as long as it is well watered. 			
@@ -51,7 +54,7 @@
 	A common way to prevent weeds from growing is to let them grow for at least two weeks.
 	After weeds emerge, apply herbicides.</prompt>
           <goto next="rice.xml" />
-	<elseif cond="choose == '3'" />
+	<elseif cond="rice == '3'" />
           <prompt>Seeds germinate and hatch for 1-2 days before direct sowing. 
 	We sow the seeds 6 to 10 inches apart. 
 	We then let water fill our fields immediately or about 8 to 12 days after direct seeding is complete.
@@ -65,7 +68,7 @@
 	that is, 8 inches between plants in rows and 8 inches between each row).
 </prompt>
           <goto next="rice.xml" />
-	<elseif cond="choose == '4'" />
+	<elseif cond="rice == '4'" />
           <prompt>
 		  The first step in the nutritional management of rice is fertilization.
 		  One of the most common problems in rice production is nitrogen deficiency. 
@@ -97,7 +100,7 @@
 		Sixth, the leaves wilt early.
 		</prompt>
           <goto next="rice.xml" />
-	<elseif cond="choose == '5'" />
+	<elseif cond="rice == '5'" />
           <prompt>
 		There are three main types of insect pests in rice.
 		  The first are rice planthoppers and leafhoppers; rice planthoppers often attack rice stems. 
@@ -125,7 +128,7 @@
 		  Try to keep the grain stored in containers with 13-14% humidity.
 		</prompt>
           <goto next="rice.xml" />
-	<elseif cond="choose == '0'" />
+	<elseif cond="rice == '6'" />
           <prompt>Why is it so important to harvest on time?
 		  The biological cycle of rice, that is, the number of days from emergence to harvest, varies from 95 days to nearly 250 days. 
 		  Moderately mature varieties are ready to harvest 120 to 150 days after planting. 
