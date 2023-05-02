@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml version="2.1">
   <form>
-    <field name="actions" type="digits">
+    <field name="cotton" type="digits">
       <prompt>
-        
       What information do you want to check?
       For Cotton Plant Information, press one.
       For how to Grow Cotton, press two.
@@ -13,13 +12,13 @@
       For Cotton Water Requirements, press six.
       For Cotton Harvest and Yield, press seven.
       For Weed Control in Cotton, press eight.
-      If you want go back to actions, press zero.
+      If you want to end this cotton information, press zero.
       </prompt>
       <filled>
          <if cond="actions == '0'">
-          <prompt>Ok. Now you are going back to actions.</prompt>
-          <goto next= "actions.xml"/>
-        <if cond="actions == '1'">
+          <prompt>Ok. Now you can end this cotton information.</prompt>
+          <goto next= "goodbye.xml"/>
+        <if cond="cotton == '1'">
           <prompt>
             The cotton plant is a shrub that is widely cultivated in more than 90 countries for the production of fiber 
             and to a lesser extent, seeds. 
@@ -35,7 +34,7 @@
             such as Texas, California, Georgia, Arkansas, Oklahoma and so on.
           </prompt>
           <goto next= "cotton.xml"/>
-        <elseif cond="actions == '2'" />
+        <elseif cond="cotton == '2'" />
           <prompt>
           Cotton Like tomatoes, peppers, and other plants, cotton plants are perennial in nature. 
             However, since we want a fairly even and satisfying yield each year, it is grown as an annual. 
@@ -53,7 +52,7 @@
             In Australia, the sowing time is September-November and the harvest time is March-May.  
          </prompt>
           <goto next= "cotton.xml"/>
-        <elseif cond="actions == '3'" />
+        <elseif cond="cotton == '3'" />
           <prompt>
             Cotton is a plant that requires long frost-free periods, lots of heat, and full sun. 
             It likes warm and humid climates. 
@@ -74,7 +73,7 @@
             In late winter, we check for weeds and plow again to get our soil conditioned and ready for cotton seed.
           </prompt>
           <goto next= "cotton.xml"/>
-          <elseif cond="actions == '4'" />
+          <elseif cond="cotton == '4'" />
           <prompt>Cotton seeds are one of the most important parameters for a good yield. 
             Growers should only use certified seeds and avoid sowing seeds that have a shelf life of more than 2 years.
            We sow cotton seeds directly in the fields with special seeders. 
@@ -90,7 +89,7 @@
             but this can only be achieved by selecting specific varieties.
           </prompt>
           <goto next= "cotton.xml"/>
-          <elseif cond="actions == '5'" />
+          <elseif cond="cotton == '5'" />
           <prompt>
           As with any crop, there is no universal fertilization regimen, as every field is different and has different needs. 
             Ideally, an annual soil analysis is extremely important in diagnosing nutrient deficiencies 
@@ -111,7 +110,7 @@
             Foliar spraying can provide fertilizers and pesticides at the same time, reducing labor costs.
           </prompt>
           <goto next= "cotton.xml"/>
-          <elseif cond="actions == '6'" />
+          <elseif cond="cotton == '6'" />
           <prompt>
           According to experience, from germination to cotton boll formation, cotton plants need at least 500 mm of water. 
             A large amount of U.S. cotton is grown on non-irrigated fields. 
@@ -128,7 +127,7 @@
             and better. The most widely used system by professional farmers is drip irrigation.
           </prompt>
           <goto next= "cotton.xml"/>
-          <elseif cond="actions == '7'" />
+          <elseif cond="cotton == '7'" />
           <prompt>
           Cotton is usually ready for harvest 5 to 6 months after planting. 
             As with any crop, knowing exactly when to harvest takes years of experience. 
@@ -146,7 +145,7 @@
             or 589 to 1,187 pounds per acre. Note that these figures may vary significantly.
           </prompt>
           <goto next= "cotton.xml"/>
-          <elseif cond="actions == '8'" />
+          <elseif cond="cotton == '8'" />
           <prompt>
           Cotton plants are very sensitive to weeds, which actively compete with the plants for water, sunlight and valuable nutrients. 
             It is essential for all farmers to have a sound weed control strategy in place before starting to sow. 
@@ -167,7 +166,7 @@
           <goto next= "cotton.xml"/>
           <else />
           <prompt>Your choice is not valid.</prompt>
-          <goto next="actions.xml" />
+          <goto next="cotton.xml" />
         </if>
       </filled>
     </field>
