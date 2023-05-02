@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 dbInit();
 
 app.get(["/"], (req, res) => {
-  greeting = "<h1>Hello From Group 6!</h1>";
+  greeting = "<h1>Hello From Group 6! Version 0.2</h1>";
   res.send(greeting);
 });
 
