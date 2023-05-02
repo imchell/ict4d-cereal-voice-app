@@ -9,13 +9,13 @@
       For sorghum knowledge, press three.
       </prompt>
       <filled>
-        <if cond="actions == '1'">
+        <if cond="education == '1'">
           <prompt>Now you are going to rice information.</prompt>
           <goto next="rice.xml" />
-        <elseif cond="actions == '2'" />
+        <elseif cond="education == '2'" />
           <prompt>Now you are going to cotton information.</prompt>
           <goto next="cotton.xml" />
-        <elseif cond="actions == '3'" />
+        <elseif cond="education == '3'" />
           <prompt>Now you are going to sorghum information.</prompt>
           <goto next="sorghum.xml" />
         <else />
