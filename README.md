@@ -26,4 +26,4 @@ fly postgres connect -a ict4d-db
 
 The application flow:
 
-![image](https://user-images.githubusercontent.com/56589633/232572733-6bd63a1a-7f06-4a26-be56-9392d498aec0.png)
+![image](./activity-diagram-plan.png)
