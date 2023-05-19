@@ -1,6 +1,6 @@
 const { Client } = require("pg");
 const fs = require("fs");
-const render = require("./templateEngine.js");
+const { render, renderHtml } = require("./templateEngine.js");
 const { log } = require("console");
 
 function dbInit() {
@@ -102,6 +102,47 @@ function updateMarket(type, price, quantity, res, isFrench = false) {
             console.error("disconnection error", err.stack);
           }
           log("updateMarket done");
+        });
+      });
+    }
+  });
+}
+
+function getLatestBidsWeb(res) {
+  log("getLatestBidsWeb start");
+  const client = new Client({ connectionString: process.env.DATABASE_URL });
+
+  client.connect((err) => {
+    if (err) {
+      console.error("connection error", err.stack);
+    } else {
+      client.query(`SELECT * FROM marketBase`, function (err, result) {
+        if (err) {
+          console.error(err);
+          client.end();
+          return;
+        }
+        let bids = "";
+        for (let i = 0; i < result.rows.length; i++) {
+          let info = result.rows[i];
+          bids = `${bids}
+          <tr>
+            <td>${info.crop}<br></b><span class="french"></span></td>
+            <td>${info.quantity}</td>
+            <td>${info.price}</td>
+          </tr>`;
+        }
+        log("bids:");
+        log(bids);
+        let replacement = {
+          bids: bids,
+        };
+        renderHtml("marketplace-web", replacement, res);
+        client.end((err) => {
+          if (err) {
+            console.error("disconnection error", err.stack);
+          }
+          log("getLatestBidsWeb done");
         });
       });
     }
@@ -243,4 +284,5 @@ module.exports = {
   getKnowledgeOfCrop: getKnowledgeOfCrop,
   updateMarket: updateMarket,
   getLatestBids: getLatestBids,
+  getLatestBidsWeb: getLatestBidsWeb,
 };

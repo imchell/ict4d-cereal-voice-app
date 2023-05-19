@@ -12,4 +12,18 @@ function render(name, mapping, response) {
   });
 }
 
-module.exports = render;
+function renderHtml(name, mapping, response) {
+  fs.readFile(`./templates/${name}.html`, "utf8", (err, data) => {
+    if (err) return "template error";
+    let res = data;
+    for (let key in mapping) {
+      res = res.replace(`{${key}}`, `${mapping[key]}`);
+    }
+    response.send(res);
+  });
+}
+
+module.exports = {
+  render,
+  renderHtml,
+};

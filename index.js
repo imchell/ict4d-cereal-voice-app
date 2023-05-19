@@ -1,5 +1,5 @@
 const express = require("express");
-const render = require("./templateEngine.js");
+const { render, renderHtml } = require("./templateEngine.js");
 const axios = require("axios");
 const weatherSlice = require("./weather.js");
 const { log } = require("console");
@@ -8,6 +8,7 @@ const {
   getKnowledgeOfCrop,
   updateMarket,
   getLatestBids,
+  getLatestBidsWeb,
 } = require("./db.js");
 
 const app = express();
@@ -59,6 +60,10 @@ app.get("/cereal-sale.xml", (req, res) => {
 
 app.get("/cereal-sale-fr.xml", (req, res) => {
   render("cereal-sale-fr", {}, res);
+});
+
+app.get("/marketplace-web.html", (req, res) => {
+  getLatestBidsWeb(res);
 });
 
 app.get("/get-cereal-price.xml", (req, res) => {
