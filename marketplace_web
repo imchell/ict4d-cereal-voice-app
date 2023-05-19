@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Marketplace</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    .french {
+      color: mediumpurple;
+    }
+    
+    @media screen and (max-width: 600px) {
+      th, td {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Marketplace<br><span class="french"> (Place du marché)</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Seed Name<br><span class="french">(Nom de la graine)</th>
+          <th>Quantity<br><span class="french">(Quantité)</th>
+          <th>Price<br><span class="french">(Prix)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rice<br></b><span class="french"> (Riz)</span></td>
+          <td>{quantity_1}</td>
+          <td>{price_1}</td>
+        </tr>
+        <tr>
+          <td>Cotton<br /><span class="french"> (Coton)</span></td>
+          <td>{quantity_2}</td>
+          <td>{price_2}</td>
+        </tr>
+        <tr>
+          <td>Sorghum<br /><span class="french"> (Sorgho)</span></td>
+          <td>{quantity_3}</td>
+          <td>{price_3}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
